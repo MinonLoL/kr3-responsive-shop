@@ -1,0 +1,552 @@
+/*
+  Адаптивные стили для контрольной работы №3.
+  Подход: Mobile First.
+  Базовые стили рассчитаны на мобильный экран.
+  Расширения добавляются через min-width медиазапросы.
+*/
+
+/* ==========================================================================
+   1. Базовые правила и защита от переполнения
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* ==========================================================================
+   2. Контейнеры и секции
+   ========================================================================== */
+
+.container,
+.main,
+main,
+.section,
+.site-header__inner,
+.breadcrumbs,
+.aside-info,
+.product-table--compare {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+main {
+  padding-inline: 0;
+  padding-block: var(--space-md);
+}
+
+.section {
+  padding-block: clamp(24px, 5vw, 64px);
+}
+
+/* ==========================================================================
+   3. Навигация и шапка (Mobile First)
+   ========================================================================== */
+
+.site-header {
+  position: static;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__logo {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs, 4px);
+  padding: 0;
+  margin: var(--space-md) 0 0;
+  list-style: none;
+}
+
+.site-nav__item {
+  margin-bottom: 0;
+}
+
+.site-nav__link {
+  display: block;
+  padding: 12px 16px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .site-nav__link {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    min-height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-header__logo {
+    text-align: left;
+  }
+
+  .site-nav__list {
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   4. Hero-блок
+   ========================================================================== */
+
+.hero {
+  display: grid;
+  gap: var(--space-lg, 24px);
+  align-items: center;
+  padding-block: clamp(24px, 5vw, 48px);
+}
+
+.hero__content {
+  display: grid;
+  gap: var(--space-md, 16px);
+}
+
+.hero__title,
+.hero h1 {
+  font-size: clamp(28px, 6vw, 48px);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hero p {
+  margin: 0;
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
+.hero__picture {
+  display: block;
+  width: 100%;
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-md, 8px);
+  display: block;
+  object-fit: cover;
+  box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
+  }
+}
+
+/* ==========================================================================
+   5. Сетка карточек товаров
+   ========================================================================== */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md, 16px);
+}
+
+.product-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__title,
+.product-card__description {
+  overflow-wrap: anywhere;
+}
+
+.product-card__button {
+  margin-top: auto;
+  min-height: 44px;
+}
+
+@media (min-width: 640px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg, 24px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   6. Изображения карточек товаров (Responsive Images)
+   ========================================================================== */
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md, 8px);
+  margin-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   7. Страница каталога и боковой фильтр
+   ========================================================================== */
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "filters"
+    "products";
+  gap: var(--space-lg, 24px);
+}
+
+.catalog-filters {
+  order: -1;
+  grid-area: filters;
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.catalog-products {
+  grid-area: products;
+}
+
+.catalog-filters__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.catalog-filters__actions .button {
+  width: 100%;
+  min-height: 44px;
+}
+
+@media (min-width: 560px) {
+  .catalog-filters__actions {
+    flex-direction: row;
+  }
+  .catalog-filters__actions .button {
+    width: auto;
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-areas: "filters products";
+    align-items: start;
+  }
+
+  .catalog-filters {
+    position: sticky;
+    top: calc(var(--header-height, 100px) + var(--space-md));
+    order: initial;
+    max-height: calc(100vh - var(--header-height, 100px) - var(--space-xl));
+    overflow-y: auto;
+  }
+}
+
+/* ==========================================================================
+   8. Страница товара (product.html)
+   ========================================================================== */
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.product__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.product__buy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: stretch;
+}
+
+.product__buy .button {
+  min-height: 44px;
+}
+
+.product__quantity {
+  min-height: 44px;
+  width: 100%;
+}
+
+.product-info-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xs) var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .product__buy {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .product__quantity {
+    width: 90px;
+  }
+
+  .product-info-list {
+    grid-template-columns: max-content 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Отзывы */
+.reviews__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .reviews__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   9. Адаптивная форма заявки (order.html и модальное окно)
+   ========================================================================== */
+
+.order-form {
+  display: grid;
+  gap: var(--space-md, 16px);
+  width: 100%;
+}
+
+.order-form__group,
+.order-form__field {
+  display: grid;
+  gap: var(--space-xs, 8px);
+  margin-bottom: 0;
+}
+
+.order-form__label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.order-form__input,
+.order-form__textarea,
+.order-form__select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  font: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.order-form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.order-form__field--checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+}
+
+.order-form__field--checkbox label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.order-form__input--checkbox {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  accent-color: var(--color-primary);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.order-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.order-form__actions .button {
+  width: 100%;
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .order-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .order-form__group--wide,
+  .order-form__field--wide,
+  .order-form__field--checkbox,
+  .order-form__actions {
+    grid-column: 1 / -1;
+  }
+
+  .order-form__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .order-form__actions .button {
+    width: auto;
+    min-width: 160px;
+  }
+}
+
+/* Модальное окно */
+.order-dialog {
+  width: min(100% - 32px, 560px);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: clamp(16px, 4vw, 32px);
+  border: none;
+  border-radius: var(--radius-lg);
+}
+
+.order-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ==========================================================================
+   10. Адаптивные таблицы (table-wrapper)
+   ========================================================================== */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-block: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+
+.product-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td,
+.product-table__cell {
+  padding: 12px 16px;
+  border: 1px solid var(--color-border, #ddd);
+  text-align: left;
+}
+
+/* ==========================================================================
+   11. Фиксированная кнопка «Наверх»
+   ========================================================================== */
+
+.to-top,
+.back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 90;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .to-top,
+  .back-to-top {
+    right: 32px;
+    bottom: 32px;
+  }
+}

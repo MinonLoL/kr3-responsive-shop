@@ -10,10 +10,11 @@
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:image" content="https://MinonLoL.github.io/kr1-html-css-shop/images/preview.jpg">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
@@ -41,7 +42,7 @@
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
+            <a class="site-nav__link" href="index.html#faq">Частые вопросы</a>
           </li>
         </ul>
       </nav>
@@ -50,22 +51,35 @@
 
   <main>
     <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class="button button--primary" href="#popular">Перейти к товарам</a>
+      <div class="hero__content">
+        <h1 class="hero__title">Учебный интернет-магазин</h1>
+        <p>
+          Это стартовая страница учебного frontend-проекта.
+          В рамках практической работы №12 реализована адаптивная вёрстка под экраны от 360px до 1440px+
+          с использованием подхода Mobile First.
+        </p>
+        <a class="button button--primary" href="#popular">Перейти к товарам</a>
+      </div>
+      <picture class="hero__picture">
+        <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg">
+        <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg">
+        <img
+          src="images/hero-mobile.jpg"
+          alt="Каталог учебных товаров"
+          width="640"
+          height="360"
+          class="hero__image"
+        >
+      </picture>
     </section>
 
     <section class="section" id="advantages">
       <h2 class="section__title">Преимущества проекта</h2>
       <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
+        <li>понятная HTML-структура и Mobile First архитектура;</li>
+        <li>семантические блоки страницы и доступность (a11y);</li>
+        <li>подключение внешних адаптивных CSS-стилей (responsive.css);</li>
+        <li>адаптивные изображения с picture, srcset и sizes.</li>
       </ul>
     </section>
 
@@ -74,6 +88,20 @@
 
       <div class="products-grid">
         <article class="product-card">
+          <img
+            src="images/product-1-640.jpg"
+            srcset="images/product-1-480.jpg 480w,
+                    images/product-1-640.jpg 640w,
+                    images/product-1-960.jpg 960w"
+            sizes="(max-width: 639px) 100vw,
+                   (max-width: 1023px) 50vw,
+                   33vw"
+            alt="Товар 1"
+            width="640"
+            height="480"
+            loading="lazy"
+            class="product-card__image"
+          >
           <h3 class="product-card__title">Товар 1</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
@@ -83,6 +111,20 @@
         </article>
 
         <article class="product-card">
+          <img
+            src="images/product-1-640.jpg"
+            srcset="images/product-1-480.jpg 480w,
+                    images/product-1-640.jpg 640w,
+                    images/product-1-960.jpg 960w"
+            sizes="(max-width: 639px) 100vw,
+                   (max-width: 1023px) 50vw,
+                   33vw"
+            alt="Товар 2"
+            width="640"
+            height="480"
+            loading="lazy"
+            class="product-card__image"
+          >
           <h3 class="product-card__title">Товар 2</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
@@ -92,6 +134,20 @@
         </article>
 
         <article class="product-card">
+          <img
+            src="images/product-1-640.jpg"
+            srcset="images/product-1-480.jpg 480w,
+                    images/product-1-640.jpg 640w,
+                    images/product-1-960.jpg 960w"
+            sizes="(max-width: 639px) 100vw,
+                   (max-width: 1023px) 50vw,
+                   33vw"
+            alt="Товар 3"
+            width="640"
+            height="480"
+            loading="lazy"
+            class="product-card__image"
+          >
           <h3 class="product-card__title">Товар 3</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
@@ -255,7 +311,7 @@
         </select>
       </div>
 
-      <div class="order-form__field">
+      <div class="order-form__field order-form__field--wide">
         <label class="order-form__label" for="order-comment">Комментарий</label>
         <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
           placeholder="Укажите дополнительную информацию"></textarea>
