@@ -6,9 +6,10 @@
   <meta name="description" content="Карточка товара учебного интернет-магазина: описание, характеристики, доставка и отзывы.">
   <title>Товар 1 — Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
@@ -51,7 +52,17 @@
     </nav>
 
     <section class="product section">
-      <img class="product__image" src="images/product-1.jpg" alt="Товар 1: общий вид">
+      <img
+        class="product__image"
+        src="images/product-1-640.jpg"
+        srcset="images/product-1-480.jpg 480w,
+                images/product-1-640.jpg 640w,
+                images/product-1-960.jpg 960w"
+        sizes="(max-width: 767px) 100vw, 50vw"
+        alt="Товар 1: общий вид"
+        width="640"
+        height="480"
+      >
 
       <div class="product__info">
         <p class="product__category">Категория: базовый товар · Артикул: KR1-0001</p>
@@ -114,49 +125,51 @@
     </section>
 
     <section class="section">
-      <table class="product-table">
-        <caption>Характеристики товара</caption>
-        <thead>
-          <tr>
-            <th class="product-table__cell product-table__cell--head" scope="col">Параметр</th>
-            <th class="product-table__cell product-table__cell--head" scope="col">Значение</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="product-table__cell" scope="row">Категория</th>
-            <td class="product-table__cell">Учебный товар</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Цена</th>
-            <td class="product-table__cell">1000 руб.</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Наличие</th>
-            <td class="product-table__cell">В наличии, 14 шт.</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Гарантия</th>
-            <td class="product-table__cell">6 месяцев</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Размеры</th>
-            <td class="product-table__cell">20 × 15 × 10 см</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Вес</th>
-            <td class="product-table__cell">0,5 кг</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Материал</th>
-            <td class="product-table__cell">Пластик и текстиль</td>
-          </tr>
-          <tr>
-            <th class="product-table__cell" scope="row">Страна производства</th>
-            <td class="product-table__cell">Россия</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table class="product-table">
+          <caption>Характеристики товара</caption>
+          <thead>
+            <tr>
+              <th class="product-table__cell product-table__cell--head" scope="col">Параметр</th>
+              <th class="product-table__cell product-table__cell--head" scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="product-table__cell" scope="row">Категория</th>
+              <td class="product-table__cell">Учебный товар</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Цена</th>
+              <td class="product-table__cell">1000 руб.</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Наличие</th>
+              <td class="product-table__cell">В наличии, 14 шт.</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Гарантия</th>
+              <td class="product-table__cell">6 месяцев</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Размеры</th>
+              <td class="product-table__cell">20 × 15 × 10 см</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Вес</th>
+              <td class="product-table__cell">0,5 кг</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Материал</th>
+              <td class="product-table__cell">Пластик и текстиль</td>
+            </tr>
+            <tr>
+              <th class="product-table__cell" scope="row">Страна производства</th>
+              <td class="product-table__cell">Россия</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="section">
@@ -202,5 +215,7 @@
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>
