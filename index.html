@@ -3,21 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ход конём — интернет-магазин настольных игр</title>
-  <meta name="description" content="Интернет-магазин настольных игр «Ход конём»: широкий выбор семейных, стратегических, карточных и детских игр с доставкой.">
+  <title>Ход конём — интернет-магазин настольных игр в Москве и по РФ</title>
+  <meta name="description" content="Интернет-магазин настольных игр «Ход конём»: свыше 500 оригинальных настолок для семейных вечеров, вечеринок и тактических баталий. Экспресс-доставка, клуб игротек и гарантия качества.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ход конём — интернет-магазин настольных игр">
-  <meta property="og:description" content="Широкий выбор настольных игр для любого возраста и компании. Новинки, признанные хиты и аксессуары.">
+  <meta property="og:description" content="Широкий выбор оригинальных настольных игр: мировые хиты, свежие новинки, аксессуары и клуб игротек в Москве.">
   <meta property="og:image" content="https://MinonLoL.github.io/kr1-html-css-shop/images/preview.jpg">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="tel:+74957774520">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">Ход конём</a>
+      <!-- Верхний ряд: Логотип, Поиск, Быстрые действия -->
+      <div class="site-header__top-row">
+        <a class="site-header__logo" href="index.html">
+          Ход конём
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </a>
 
+        <div class="site-header__search" role="search">
+          <label class="visually-hidden" for="site-search">Поиск по каталогу настольных игр</label>
+          <input class="site-header__search-input" id="site-search" type="search" placeholder="Поиск игры, жанра или механики...">
+          <button class="site-header__search-btn" type="button" aria-label="Найти">🔍</button>
+        </div>
+
+        <div class="site-header__actions">
+          <a class="header-action" href="tel:+74957774520" title="Служба заботы о клиентах">
+            <span class="header-action__icon" aria-hidden="true">📞</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">10:00–22:00</span>
+              <span class="header-action__main">+7 (495) 777-45-20</span>
+            </span>
+          </a>
+          <a class="header-action header-action--cart" href="order.html" title="Перейти к оформлению заказа">
+            <span class="header-action__icon" aria-hidden="true">🛒</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">Быстрый заказ</span>
+              <span class="header-action__main">Корзина</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Главная навигация сайта -->
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -50,6 +89,7 @@
   </header>
 
   <main>
+    <!-- Главный баннер (Hero) -->
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">Магазин настольных игр «Ход конём»</h1>
@@ -57,7 +97,10 @@
           Откройте мир ярких приключений, тактических баталий и тёплых семейных вечеров.
           В нашем каталоге собраны лучшие мировые хиты и свежие новинки для любой компании.
         </p>
-        <a class="button button--primary" href="#popular">Перейти к играм</a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="button button--primary" href="#popular">Перейти к играм</a>
+          <a class="button button--secondary" href="catalog.html">Полный каталог</a>
+        </div>
       </div>
       <picture class="hero__picture">
         <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg">
@@ -72,6 +115,21 @@
       </picture>
     </section>
 
+    <!-- Быстрый выбор популярных категорий -->
+    <section class="section category-chips-section" aria-label="Быстрый выбор категорий">
+      <h2 class="section__title">Популярные категории</h2>
+      <div class="category-chips">
+        <a class="category-chip" href="catalog.html">🏰 Семейные стратегии</a>
+        <a class="category-chip" href="catalog.html">🎭 Для вечеринок и компаний</a>
+        <a class="category-chip" href="catalog.html">⚔️ Тактические дуэли</a>
+        <a class="category-chip" href="catalog.html">🚀 Научная фантастика</a>
+        <a class="category-chip" href="catalog.html">🃏 Карточные и филлеры</a>
+        <a class="category-chip" href="catalog.html">🧩 Кооперативные квесты</a>
+        <a class="category-chip" href="catalog.html">👶 Детские и развивающие</a>
+      </div>
+    </section>
+
+    <!-- Преимущества магазина -->
     <section class="section" id="advantages">
       <h2 class="section__title">Преимущества магазина</h2>
       <ul class="advantages-list">
@@ -82,11 +140,13 @@
       </ul>
     </section>
 
+    <!-- Популярные товары -->
     <section class="section" id="popular">
       <h2 class="section__title">Популярные товары</h2>
 
       <div class="products-grid">
-        <article class="product-card">
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge">Скидка</span>
           <img
             src="images/product-1-640.jpg"
             srcset="images/product-1-480.jpg 480w,
@@ -101,9 +161,18 @@
             loading="lazy"
             class="product-card__image"
           >
-          <h3 class="product-card__title">Каркассон</h3>
+          <h3 class="product-card__title">
+            <a href="product.html">Каркассон</a>
+          </h3>
+          <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 48 отзывов</p>
           <p class="product-card__description">Легендарная семейная стратегия о строительстве средневековых замков, дорог и монастырей.</p>
-          <p class="product-card__price">Цена: 1990 руб.</p>
+          <ul class="product-card__features">
+            <li>👥 2–5 игроков</li>
+            <li>🎂 от 7 лет</li>
+            <li>⏱️ 35–45 мин</li>
+          </ul>
+          <p class="product-card__stock product-card__stock--in">В наличии (14 шт.)</p>
+          <p class="product-card__price">1990 руб.<s class="product-card__old-price">2490 руб.</s></p>
           <button class="button button--primary product-card__button" type="button" data-product="Каркассон">
             Заказать
           </button>
@@ -124,15 +193,25 @@
             loading="lazy"
             class="product-card__image"
           >
-          <h3 class="product-card__title">Catan (Колонизаторы)</h3>
+          <h3 class="product-card__title">
+            <a href="product.html">Catan (Колонизаторы)</a>
+          </h3>
+          <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 36 отзывов</p>
           <p class="product-card__description">Мировой бестселлер об освоении острова, торговле ресурсами и развитии поселений.</p>
-          <p class="product-card__price">Цена: 3490 руб.</p>
+          <ul class="product-card__features">
+            <li>👥 3–4 игрока</li>
+            <li>🎂 от 10 лет</li>
+            <li>⏱️ 60–90 мин</li>
+          </ul>
+          <p class="product-card__stock product-card__stock--in">В наличии (8 шт.)</p>
+          <p class="product-card__price">3490 руб.</p>
           <button class="button button--primary product-card__button" type="button" data-product="Catan (Колонизаторы)">
             Заказать
           </button>
         </article>
 
-        <article class="product-card">
+        <article class="product-card product-card--new">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
           <img
             src="images/product-1-640.jpg"
             srcset="images/product-1-480.jpg 480w,
@@ -147,9 +226,18 @@
             loading="lazy"
             class="product-card__image"
           >
-          <h3 class="product-card__title">Покорение Марса</h3>
+          <h3 class="product-card__title">
+            <a href="product.html">Покорение Марса</a>
+          </h3>
+          <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 28 отзывов</p>
           <p class="product-card__description">Глубокая научно-фантастическая стратегия об управлении корпорациями и терраформировании планеты.</p>
-          <p class="product-card__price">Цена: 4990 руб.</p>
+          <ul class="product-card__features">
+            <li>👥 1–5 игроков</li>
+            <li>🎂 от 12 лет</li>
+            <li>⏱️ 90–120 мин</li>
+          </ul>
+          <p class="product-card__stock product-card__stock--order">Под заказ (доставка 2 дня)</p>
+          <p class="product-card__price">4990 руб.</p>
           <button class="button button--primary product-card__button" type="button" data-product="Покорение Марса">
             Заказать
           </button>
@@ -157,6 +245,81 @@
       </div>
     </section>
 
+    <!-- Спецпредложение недели -->
+    <section class="section promo-banner">
+      <div class="promo-banner__content">
+        <span class="promo-banner__badge">Хит сезона со скидкой</span>
+        <h2 class="promo-banner__title">Каркассон. Королевский подарок</h2>
+        <p class="promo-banner__text">
+          Большой подарочный набор: базовая игра и 4 официальных расширения («Таверны и соборы», «Купцы и зодчие», «Аббат», «Река») в одной коробке.
+          Идеальный выбор для подарка и тёплых семейных вечеров.
+        </p>
+        <div class="promo-banner__price">
+          <span class="promo-banner__current-price">3 990 руб.</span>
+          <s class="promo-banner__old-price">4 990 руб.</s>
+          <span class="promo-banner__discount">Экономия 1000 ₽ (-20%)</span>
+        </div>
+        <div class="promo-banner__actions">
+          <a class="button button--primary" href="order.html">Оформить заявку</a>
+          <a class="button button--secondary" href="product.html">Подробнее об игре</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Гарантии и безопасность -->
+    <section class="section trust-section" aria-label="Гарантии магазина">
+      <h2 class="section__title">Почему выбирают «Ход конём»</h2>
+      <div class="trust-grid">
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">🛡️</div>
+          <h3 class="trust-card__title">100% Оригиналы</h3>
+          <p class="trust-card__desc">Сотрудничаем напрямую с официальными издательствами Hobby World, GaGa Games, Crowd Games и Лавка Игр.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">📦</div>
+          <h3 class="trust-card__title">Бронебойная упаковка</h3>
+          <p class="trust-card__desc">Упаковываем каждую коробку в 3 слоя воздушно-пузырьковой плёнки с защитными картонными уголками.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">⚡</div>
+          <h3 class="trust-card__title">Быстрая доставка</h3>
+          <p class="trust-card__desc">Курьером в день заказа по Москве. Доставка СДЭК, Boxberry и Почтой России во все регионы за 1–3 дня.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">🎲</div>
+          <h3 class="trust-card__title">Клуб и игротеки</h3>
+          <p class="trust-card__desc">Большая игротека в шоуруме на Дмитровской. Приходите пробовать новинки перед покупкой бесплатно.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Отзывы покупателей -->
+    <section class="section reviews" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+      <p class="reviews__summary">Средняя оценка магазина: 4.9 из 5 на основе 480 проверенных отзывов.</p>
+
+      <div class="reviews__list">
+        <article class="review-card">
+          <p class="review-card__text">«Превосходный магазин! Заказывал Каркассон и Колонизаторов: коробки упакованы идеально, уголки целые, доставка по Москве на следующий день.»</p>
+          <p class="review-card__author">Константин Смирнов, г. Москва</p>
+          <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
+        </article>
+
+        <article class="review-card">
+          <p class="review-card__text">«Ребята из клуба помогли разобраться в правилах "Покорения Марса", после чего сразу взяли коробку домой. Спасибо за экспертность и тёплую атмосферу!»</p>
+          <p class="review-card__author">Елена и Дмитрий, г. Мытищи</p>
+          <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
+        </article>
+
+        <article class="review-card">
+          <p class="review-card__text">«Очень удобный каталог с реальными фильтрами. Отправили СДЭКом в Екатеринбург за 2 дня. Однозначно лучший профильный магазин настолок.»</p>
+          <p class="review-card__author">Артём Васильев, г. Екатеринбург</p>
+          <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Частые вопросы (FAQ) -->
     <section class="section faq" id="faq">
       <h2 class="section__title">Частые вопросы</h2>
 
@@ -253,6 +416,7 @@
       </details>
     </section>
 
+    <!-- Клуб игротек -->
     <aside class="aside-info">
       <h2>Клуб настольных игр и игротеки</h2>
       <p>
@@ -261,12 +425,83 @@
         и находить компанию для увлекательных партий.
       </p>
     </aside>
+
+    <!-- Подписка на закрытый клуб скидок -->
+    <section class="section newsletter-section">
+      <div class="newsletter-card">
+        <div class="newsletter-card__content">
+          <h2 class="newsletter-card__title">Вступайте в клуб настольщиков «Ход конём»</h2>
+          <p class="newsletter-card__text">Получите 500 бонусных баллов на первый заказ, закрытые распродажи и анонсы бесплатных игротек.</p>
+        </div>
+        <form class="newsletter-card__form" action="#" method="post" onsubmit="event.preventDefault(); alert('Спасибо за подписку! Промокод KNIGHT2026 активирован.');">
+          <input class="newsletter-card__input" type="email" placeholder="Ваш e-mail для скидки" required>
+          <button class="button button--primary" type="submit">Получить 500 ₽</button>
+        </form>
+      </div>
+    </section>
   </main>
 
+  <!-- Полноценный четырёхколоночный футер -->
   <footer class="site-footer" id="contacts">
-    <p>&copy; 2026 Ход конём. Все права защищены.</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="tel:+74957774520">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="mailto:info@hod-konem.ru">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="index.html#faq">Доставка и оплата</a></li>
+            <li><a href="index.html#faq">Гарантия и возврат</a></li>
+            <li><a href="contacts.html">Шоурум и клуб игротек</a></li>
+            <li><a href="contacts.html#feedback">Обратная связь</a></li>
+            <li><a href="index.html#reviews">Отзывы покупателей</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">MasterCard</span>
+            <span class="payment-badge">Долями</span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
+  <!-- Модальное окно оформления заказа -->
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 id="order-dialog-title">Оформление заказа</h2>
 

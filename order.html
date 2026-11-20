@@ -3,15 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Оформление заказа настольных игр в интернет-магазине «Ход конём». Быстрая доставка, бережная упаковка и удобная оплата.">
+  <meta name="description" content="Оформление заказа настольных игр в интернет-магазине «Ход конём». Быстрая доставка по Москве и всей России, бережная упаковка и удобная оплата.">
   <title>Оформление заказа — Ход конём</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="tel:+74957774520">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">Ход конём</a>
+      <div class="site-header__top-row">
+        <a class="site-header__logo" href="index.html">
+          Ход конём
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </a>
+
+        <div class="site-header__search" role="search">
+          <label class="visually-hidden" for="site-search">Поиск по каталогу настольных игр</label>
+          <input class="site-header__search-input" id="site-search" type="search" placeholder="Поиск настольной игры, жанра или автора...">
+          <button class="site-header__search-btn" type="button" aria-label="Найти">🔍</button>
+        </div>
+
+        <div class="site-header__actions">
+          <a class="header-action" href="tel:+74957774520" title="Служба заботы о клиентах">
+            <span class="header-action__icon" aria-hidden="true">📞</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">10:00–22:00</span>
+              <span class="header-action__main">+7 (495) 777-45-20</span>
+            </span>
+          </a>
+          <a class="header-action header-action--cart" href="order.html" title="Перейти к оформлению заказа">
+            <span class="header-action__icon" aria-hidden="true">🛒</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">Быстрый заказ</span>
+              <span class="header-action__main">Корзина</span>
+            </span>
+          </a>
+        </div>
+      </div>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -37,7 +74,7 @@
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
+            <a class="site-nav__link" href="index.html#faq">Частые вопросы</a>
           </li>
         </ul>
       </nav>
@@ -47,67 +84,170 @@
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Заявка</span>
+      <span class="breadcrumbs__current">Оформление заказа</span>
     </nav>
 
     <section class="section">
       <h1>Оформление заказа</h1>
+      <p>
+        Заполните контактные данные для подтверждения доставки. Менеджер службы заботы свяжется с вами в течение 15 минут для подтверждения брони и удобного интервала приезда курьера.
+      </p>
 
-      <form class="order-form order-form--page" action="#" method="post">
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-name">Имя</label>
-          <input class="order-form__input" id="order-name" name="name" type="text"
-            placeholder="Введите ваше имя" minlength="2"
-            autocomplete="given-name" required>
-        </div>
+      <div class="order-checkout-layout">
+        <!-- Форма заказа -->
+        <form class="order-form order-form--page" action="#" method="post">
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-name">Имя покупателя</label>
+            <input class="order-form__input" id="order-name" name="name" type="text"
+              placeholder="Введите ваше имя" minlength="2"
+              autocomplete="given-name" required>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-email">E-mail</label>
-          <input class="order-form__input" id="order-email" name="email" type="email"
-            placeholder="example@mail.ru" autocomplete="email" required>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-email">Электронная почта (e-mail)</label>
+            <input class="order-form__input" id="order-email" name="email" type="email"
+              placeholder="example@mail.ru" autocomplete="email" required>
+            <small class="order-form__hint">На этот адрес отправим электронный чек и трек-номер посылки</small>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-phone">Телефон</label>
-          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
-            placeholder="+7 (900) 000-00-00"
-            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-          <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-phone">Номер телефона</label>
+            <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
+              placeholder="+7 (900) 000-00-00"
+              pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+            <small class="order-form__hint">Формат: +7 (900) 000-00-00 (курьер звонит за 1 час)</small>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-topic">Тема заявки</label>
-          <select class="order-form__select" id="order-topic" name="topic" required>
-            <option value="">Выберите тему</option>
-            <option value="product">Покупка настольной игры</option>
-            <option value="consultation">Консультация по выбору игры</option>
-            <option value="delivery">Вопрос по доставке и самовывозу</option>
-          </select>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-topic">Тема заявки / Способ получения</label>
+            <select class="order-form__select" id="order-topic" name="topic" required>
+              <option value="">Выберите тему или способ получения</option>
+              <option value="product" selected>Покупка настольной игры с курьерской доставкой</option>
+              <option value="delivery">Самовывоз из шоурума (Москва, Дизайн-завод)</option>
+              <option value="consultation">Консультация гейм-мастера по подбору игр</option>
+            </select>
+          </div>
 
-        <div class="order-form__field order-form__field--wide">
-          <label class="order-form__label" for="order-comment">Комментарий</label>
-          <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
-            placeholder="Укажите адрес доставки, удобное время или пожелания к заказу"></textarea>
-        </div>
+          <div class="order-form__field order-form__field--wide">
+            <label class="order-form__label" for="order-comment">Адрес доставки и пожелания к заказу</label>
+            <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
+              placeholder="Укажите город, улицу, дом, квартиру/офис, удобный интервал времени или промокод"></textarea>
+          </div>
 
-        <div class="order-form__field order-form__field--checkbox">
-          <label>
-            <input class="order-form__input order-form__input--checkbox"
-              id="order-agreement" name="agreement" type="checkbox" required>
-            Я согласен на обработку данных
-          </label>
-        </div>
+          <div class="order-form__field order-form__field--checkbox">
+            <label>
+              <input class="order-form__input order-form__input--checkbox"
+                id="order-agreement" name="agreement" type="checkbox" required>
+              Я согласен на обработку персональных данных и подтверждаю ознакомление с правилами продажи
+            </label>
+          </div>
 
-        <div class="order-form__actions">
-          <button class="button button--primary" type="submit">Подтвердить заказ</button>
-        </div>
-      </form>
+          <div class="order-form__actions">
+            <button class="button button--primary" type="submit">Подтвердить заказ</button>
+          </div>
+        </form>
+
+        <!-- Сводка заказа интернет-магазина -->
+        <aside class="order-summary-box" aria-label="Содержимое заказа">
+          <h2 class="order-summary-box__title">Ваш заказ</h2>
+
+          <div class="order-summary-row">
+            <span><strong>Каркассон</strong> (Базовое издание) × 1</span>
+            <span>1 990 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Скидка по акции</span>
+            <span style="color: var(--color-success);">-500 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Промокод <code>KNIGHT2026</code> (-10%)</span>
+            <span style="color: var(--color-success);">-199 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Фирменные протекторы (в подарок)</span>
+            <span style="color: var(--color-success);">0 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Доставка по Москве</span>
+            <span style="color: var(--color-success);">Бесплатно</span>
+          </div>
+
+          <div class="order-summary-row order-summary-row--total">
+            <span>Итого к оплате:</span>
+            <span>1 791 руб.</span>
+          </div>
+
+          <div style="margin-top: 20px; font-size: 13px; color: var(--color-muted); line-height: 1.6;">
+            <p>🛡️ <strong>Гарантия 100% оригинала:</strong> сертифицированное издание от официального издательства.</p>
+            <p>📦 <strong>Бронебойная упаковка:</strong> коробка приедет без малейших повреждений.</p>
+            <p>🔒 <strong>Безопасный расчёт:</strong> оплата курьеру или при получении картой/наличными после проверки.</p>
+          </div>
+        </aside>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Ход конём. Все права защищены.</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="tel:+74957774520">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="mailto:info@hod-konem.ru">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="index.html#faq">Доставка и оплата</a></li>
+            <li><a href="index.html#faq">Гарантия и возврат</a></li>
+            <li><a href="contacts.html">Шоурум и клуб игротек</a></li>
+            <li><a href="contacts.html#feedback">Обратная связь</a></li>
+            <li><a href="index.html#reviews">Отзывы покупателей</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">MasterCard</span>
+            <span class="payment-badge">Долями</span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
   <a class="to-top" href="#top">Наверх</a>

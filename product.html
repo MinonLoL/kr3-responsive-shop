@@ -3,15 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Купить настольную игру «Каркассон» в интернет-магазине «Ход конём». Описание, правила, характеристики, доставка и отзывы игроков.">
+  <meta name="description" content="Купить настольную игру «Каркассон» в интернет-магазине «Ход конём». Оригинальное лицензионное издание, правила, характеристики, быстрая доставка и отзывы игроков.">
   <title>Настольная игра «Каркассон» — Ход конём</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="tel:+74957774520">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">Ход конём</a>
+      <div class="site-header__top-row">
+        <a class="site-header__logo" href="index.html">
+          Ход конём
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </a>
+
+        <div class="site-header__search" role="search">
+          <label class="visually-hidden" for="site-search">Поиск по каталогу настольных игр</label>
+          <input class="site-header__search-input" id="site-search" type="search" placeholder="Поиск настольной игры, жанра или автора...">
+          <button class="site-header__search-btn" type="button" aria-label="Найти">🔍</button>
+        </div>
+
+        <div class="site-header__actions">
+          <a class="header-action" href="tel:+74957774520" title="Служба заботы о клиентах">
+            <span class="header-action__icon" aria-hidden="true">📞</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">10:00–22:00</span>
+              <span class="header-action__main">+7 (495) 777-45-20</span>
+            </span>
+          </a>
+          <a class="header-action header-action--cart" href="order.html" title="Перейти к оформлению заказа">
+            <span class="header-action__icon" aria-hidden="true">🛒</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">Быстрый заказ</span>
+              <span class="header-action__main">Корзина</span>
+            </span>
+          </a>
+        </div>
+      </div>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -37,7 +74,7 @@
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
+            <a class="site-nav__link" href="index.html#faq">Частые вопросы</a>
           </li>
         </ul>
       </nav>
@@ -51,6 +88,7 @@
       <span class="breadcrumbs__current">Каркассон</span>
     </nav>
 
+    <!-- Основной блок товара -->
     <section class="product section">
       <img
         class="product__image"
@@ -65,21 +103,21 @@
       >
 
       <div class="product__info">
-        <p class="product__category">Категория: семейные стратегии · Артикул: HK-0101</p>
+        <p class="product__category">Категория: семейные стратегии · Артикул: HK-0101 · Издатель: Hobby World</p>
         <h1 class="product__title">Каркассон (Carcassonne)</h1>
 
         <p class="product__rating">
           <span role="img" aria-label="Оценка 5 из 5">★★★★★</span>
-          4.9 · <a href="#reviews">48 отзывов</a>
+          4.9 · <a href="#reviews">48 отзывов покупателей</a>
         </p>
 
         <p class="product__price">
           1990 руб.
           <s class="product__old-price">2490 руб.</s>
-          <span class="product__save">Экономия 500 руб.</span>
+          <span class="product__save">Экономия 500 руб. (-20%)</span>
         </p>
 
-        <p class="product__stock product__stock--in">В наличии: 14 шт.</p>
+        <p class="product__stock product__stock--in">В наличии на складе: 14 шт. (Шоурум на Дмитровской: 3 шт.)</p>
 
         <p class="product__description">
           «Каркассон» — признанный мировой шедевр среди настольных игр. Участники пошагово
@@ -88,46 +126,51 @@
         </p>
 
         <fieldset class="product__options">
-          <legend>Комплектация</legend>
+          <legend>Комплектация издания</legend>
           <label class="product__option">
-            <input type="radio" name="bundle" value="standard" checked> Базовое издание (входит в цену)
+            <input type="radio" name="bundle" value="standard" checked> Базовое классическое издание (входит в цену)
           </label>
           <label class="product__option">
-            <input type="radio" name="bundle" value="extended"> Издание с дополнением «Река и Аббат» (+500 руб.)
+            <input type="radio" name="bundle" value="extended"> Издание с официальными мини-дополнениями «Река» и «Аббат» (+500 руб.)
           </label>
         </fieldset>
 
         <div class="product__buy">
           <label for="quantity">Количество</label>
           <input class="product__quantity" id="quantity" name="quantity" type="number" min="1" max="14" value="1">
-          <a class="button button--primary" href="order.html">Оставить заявку</a>
+          <a class="button button--primary" href="order.html">Оформить заказ</a>
         </div>
 
         <ul class="product__perks">
-          <li>Доставка за 1–2 дня</li>
-          <li>Фирменные протекторы в подарок</li>
-          <li>Возврат в течение 14 дней</li>
+          <li>Быстрая курьерская доставка за 1–2 дня</li>
+          <li>Пакет фирменных протекторов для карт в подарок</li>
+          <li>Гарантия комплектности всех фишек и тайлов</li>
+          <li>Возврат в течение 14 дней без лишних вопросов</li>
         </ul>
       </div>
     </section>
 
+    <!-- Подробное описание игрового процесса -->
     <section class="section">
-      <h2 class="section__title">Описание игры</h2>
+      <h2 class="section__title">Об игре и механике</h2>
       <p>
-        «Каркассон» завоевал миллионы поклонников благодаря простым правилам и глубокому игровому процессу.
-        Игроки по очереди вытягивают квадратные тайлы и выкладывают их на стол, расширяя карту средневековой Франции.
+        «Каркассон» завоевал миллионы поклонников по всему миру благодаря элегантным и интуитивно понятным правилам.
+        В начале партии на столе лежит единственный стартовый тайл. Каждый ход игрок вслепую вытягивает новый квадрат местности
+        и присоединяет его к уже выложенным, продолжая дороги, достраивая крепостные стены или расширяя зелёные поля.
       </p>
       <ul>
-        <li>Простые и интуитивные правила, понятные за пять минут объяснения;</li>
-        <li>Высокая реиграбельность — каждая новая партия формирует неповторимый ландшафт;</li>
-        <li>Плотный долговечный картон тайлов и аккуратные деревянные фигурки миплов.</li>
+        <li><strong>Простые правила:</strong> объясняются новичкам и детям буквально за 5–7 минут;</li>
+        <li><strong>Высокая реиграбельность:</strong> случайный выход тайлов гарантирует, что каждая партия создаст неповторимую карту;</li>
+        <li><strong>Премиальные компоненты:</strong> плотный износостойкий лён-картон и аккуратно выточенные деревянные миплы;</li>
+        <li><strong>Масштабируемость:</strong> к игре создано более 10 официальных расширений, углубляющих тактику.</li>
       </ul>
     </section>
 
+    <!-- Характеристики -->
     <section class="section">
       <div class="table-wrapper">
         <table class="product-table">
-          <caption>Характеристики игры</caption>
+          <caption>Характеристики настольной игры «Каркассон»</caption>
           <thead>
             <tr>
               <th class="product-table__cell product-table__cell--head" scope="col">Параметр</th>
@@ -137,82 +180,140 @@
           <tbody>
             <tr>
               <th class="product-table__cell" scope="row">Жанр</th>
-              <td class="product-table__cell">Семейная стратегия, градостроение</td>
+              <td class="product-table__cell">Семейная стратегия, градостроение, контроль территорий</td>
             </tr>
             <tr>
               <th class="product-table__cell" scope="row">Возраст игроков</th>
-              <td class="product-table__cell">От 7 лет</td>
+              <td class="product-table__cell">От 7 лет (подходит для игры с детьми)</td>
             </tr>
             <tr>
               <th class="product-table__cell" scope="row">Количество игроков</th>
-              <td class="product-table__cell">От 2 до 5 человек</td>
+              <td class="product-table__cell">От 2 до 5 человек (отличный дуэльный режим)</td>
             </tr>
             <tr>
               <th class="product-table__cell" scope="row">Время партии</th>
               <td class="product-table__cell">35–45 минут</td>
             </tr>
             <tr>
-              <th class="product-table__cell" scope="row">Язык правил</th>
-              <td class="product-table__cell">Русский</td>
+              <th class="product-table__cell" scope="row">Язык правил и компонентов</th>
+              <td class="product-table__cell">Русский (игра полностью языконезависима)</td>
             </tr>
             <tr>
-              <th class="product-table__cell" scope="row">Комплектация</th>
-              <td class="product-table__cell">72 квадрата местности, 40 фишек подданных, дорожка подсчёта очков, правила</td>
+              <th class="product-table__cell" scope="row">Содержимое коробки</th>
+              <td class="product-table__cell">72 квадрата местности, 40 деревянных миплов 5 цветов, дорожка подсчёта очков, иллюстрированная книга правил</td>
             </tr>
             <tr>
               <th class="product-table__cell" scope="row">Размеры коробки</th>
               <td class="product-table__cell">19 × 27,5 × 6,5 см</td>
             </tr>
             <tr>
-              <th class="product-table__cell" scope="row">Вес</th>
-              <td class="product-table__cell">0,7 кг</td>
+              <th class="product-table__cell" scope="row">Вес с упаковкой</th>
+              <td class="product-table__cell">0,75 кг</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
+    <!-- Доставка и условия -->
     <section class="section">
-      <h2 class="section__title">Доставка и возврат</h2>
+      <h2 class="section__title">Доставка и гарантия</h2>
       <dl class="product-info-list">
-        <dt>Доставка</dt>
-        <dd>Курьером по Москве и Санкт-Петербургу за 1–2 дня. СДЭК и Почта России по всем регионам.</dd>
-        <dt>Самовывоз</dt>
-        <dd>Бесплатно из флагманского шоурума «Ход конём» в день заказа.</dd>
-        <dt>Возврат</dt>
-        <dd>В течение 14 дней в невскрытой заводской упаковке.</dd>
+        <dt>Курьерская доставка</dt>
+        <dd>По Москве и МО на следующий день. Курьер привозит заказ в 3-часовой интервал с предварительным звонком.</dd>
+        <dt>Пункты выдачи (СДЭК / Boxberry)</dt>
+        <dd>Более 15 000 пунктов по всей России. Срок доставки 1–4 рабочих дня. Оплата при осмотре.</dd>
+        <dt>Самовывоз из шоурума</dt>
+        <dd>Бесплатно из флагманского магазина «Ход конём» (Москва, Дизайн-завод) в день заказа.</dd>
+        <dt>Гарантия качества</dt>
+        <dd>Официальная гарантия производителя. Если в коробке не хватает детали — заменим за наш счёт экспресс-доставкой.</dd>
       </dl>
     </section>
 
+    <!-- Отзывы покупателей -->
     <section class="section reviews" id="reviews">
       <h2 class="section__title">Отзывы покупателей</h2>
-      <p class="reviews__summary">Средняя оценка: 4.9 из 5. Показаны последние отзывы.</p>
+      <p class="reviews__summary">Средняя оценка: 4.9 из 5. Показаны реальные отзывы владельцев игры.</p>
 
       <div class="reviews__list">
         <article class="review-card">
-          <p class="review-card__text">«Превосходная игра для всей семьи! Легко освоили даже дети 8 лет, играем каждые выходные.»</p>
-          <p class="review-card__author">Анна, Москва</p>
+          <p class="review-card__text">«Превосходная игра для всей семьи! Легко освоили даже дети 8 лет, играем каждые выходные. Очень радует качество деревянных фигурок.»</p>
+          <p class="review-card__author">Анна Соколова, г. Москва</p>
           <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
         </article>
 
         <article class="review-card">
-          <p class="review-card__text">«Золотой стандарт настолок. Качество компонентов идеальное, коробка приехала в безупречном состоянии.»</p>
-          <p class="review-card__author">Игорь, Казань</p>
+          <p class="review-card__text">«Золотой стандарт настолок. Качество компонентов идеальное, коробка приехала в безупречном состоянии, углы не помяты. Спасибо за бережную упаковку!»</p>
+          <p class="review-card__author">Игорь Ковалёв, г. Казань</p>
           <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
         </article>
 
         <article class="review-card">
-          <p class="review-card__text">«Затягивающий процесс! Прекрасно играется как вдвоём, так и компанией из 4–5 человек.»</p>
-          <p class="review-card__author">Мария, Самара</p>
+          <p class="review-card__text">«Затягивающий процесс! Прекрасно играется как вдвоём с девушкой, так и шумной компанией из 4–5 человек. Всем рекомендую к покупке.»</p>
+          <p class="review-card__author">Мария Воронина, г. Самара</p>
           <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
         </article>
       </div>
     </section>
-
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Ход конём. Все права защищены.</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="tel:+74957774520">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="mailto:info@hod-konem.ru">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="index.html#faq">Доставка и оплата</a></li>
+            <li><a href="index.html#faq">Гарантия и возврат</a></li>
+            <li><a href="contacts.html">Шоурум и клуб игротек</a></li>
+            <li><a href="contacts.html#feedback">Обратная связь</a></li>
+            <li><a href="index.html#reviews">Отзывы покупателей</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">MasterCard</span>
+            <span class="payment-badge">Долями</span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
   <a class="to-top" href="#top">Наверх</a>

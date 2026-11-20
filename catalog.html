@@ -3,15 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог настольных игр магазина «Ход конём»: стратегии, семейные, детские и игры для вечеринок. Удобные фильтры и сортировка.">
+  <meta name="description" content="Каталог оригинальных настольных игр магазина «Ход конём»: стратегии, семейные, карточные, детские и пати-игры. Удобный подбор по числу игроков, времени и сложности.">
   <title>Каталог настольных игр — Ход конём</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="tel:+74957774520">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">Ход конём</a>
+      <div class="site-header__top-row">
+        <a class="site-header__logo" href="index.html">
+          Ход конём
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </a>
+
+        <div class="site-header__search" role="search">
+          <label class="visually-hidden" for="site-search">Поиск по каталогу настольных игр</label>
+          <input class="site-header__search-input" id="site-search" type="search" placeholder="Поиск настольной игры, жанра или автора...">
+          <button class="site-header__search-btn" type="button" aria-label="Найти">🔍</button>
+        </div>
+
+        <div class="site-header__actions">
+          <a class="header-action" href="tel:+74957774520" title="Служба заботы о клиентах">
+            <span class="header-action__icon" aria-hidden="true">📞</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">10:00–22:00</span>
+              <span class="header-action__main">+7 (495) 777-45-20</span>
+            </span>
+          </a>
+          <a class="header-action header-action--cart" href="order.html" title="Перейти к оформлению заказа">
+            <span class="header-action__icon" aria-hidden="true">🛒</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">Быстрый заказ</span>
+              <span class="header-action__main">Корзина</span>
+            </span>
+          </a>
+        </div>
+      </div>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -37,7 +74,7 @@
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
+            <a class="site-nav__link" href="index.html#faq">Частые вопросы</a>
           </li>
         </ul>
       </nav>
@@ -53,11 +90,13 @@
     <section class="section">
       <h1>Каталог настольных игр</h1>
       <p>
-        Выберите настольную игру по категории, цене и наличию. Фильтры остаются на экране при прокрутке списка.
+        В нашей коллекции собраны лучшие мировые издания: от лёгких семейных игр и весёлых пати-геймов
+        до масштабных тактических и экономических стратегий. Используйте фильтры для быстрого подбора по цене и наличию.
       </p>
     </section>
 
     <section class="catalog-layout">
+      <!-- Панель фильтров -->
       <aside class="catalog-filters" aria-labelledby="filters-title">
         <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
 
@@ -65,13 +104,13 @@
           <fieldset class="catalog-filters__group">
             <legend class="catalog-filters__legend">Категория</legend>
             <label class="catalog-filters__label">
-              <input class="catalog-filters__input" type="checkbox" name="category" value="popular"> Популярные
+              <input class="catalog-filters__input" type="checkbox" name="category" value="popular"> Популярные хиты
             </label>
             <label class="catalog-filters__label">
-              <input class="catalog-filters__input" type="checkbox" name="category" value="new"> Новинки
+              <input class="catalog-filters__input" type="checkbox" name="category" value="new"> Свежие новинки
             </label>
             <label class="catalog-filters__label">
-              <input class="catalog-filters__input" type="checkbox" name="category" value="discount"> Со скидкой
+              <input class="catalog-filters__input" type="checkbox" name="category" value="discount"> Акции и скидки
             </label>
           </fieldset>
 
@@ -99,6 +138,7 @@
         </form>
       </aside>
 
+      <!-- Список товаров -->
       <section class="catalog-products">
         <h2 class="section__title">Список товаров</h2>
 
@@ -119,124 +159,277 @@
 
           <article class="product-card product-card--discount" data-category="discount" data-price="1990" data-rating="4.9" data-stock="in">
             <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Каркассон</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Каркассон"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Каркассон</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 48 отзывов</p>
-            <p class="product-card__description">Мировой хит о строительстве средневековых замков и дорог.</p>
+            <p class="product-card__description">Мировой хит о строительстве средневековых замков, дорог и монастырей.</p>
             <ul class="product-card__features">
-              <li>2–5 игроков · от 7 лет</li>
-              <li>Партия 35–45 минут</li>
+              <li>👥 2–5 игроков</li>
+              <li>🎂 от 7 лет</li>
+              <li>⏱️ 35–45 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (14 шт.)</p>
             <p class="product-card__price">1990 руб.<s class="product-card__old-price">2490 руб.</s></p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="popular" data-price="3490" data-rating="4.8" data-stock="in">
-            <h3 class="product-card__title">Catan (Колонизаторы)</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Catan (Колонизаторы)"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Catan (Колонизаторы)</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 36 отзывов</p>
-            <p class="product-card__description">Экономическая стратегия о торговле и освоении острова.</p>
+            <p class="product-card__description">Экономическая стратегия о торговле ресурсами и развитии поселений.</p>
             <ul class="product-card__features">
-              <li>3–4 игрока · от 10 лет</li>
-              <li>Партия 60–90 минут</li>
+              <li>👥 3–4 игрока</li>
+              <li>🎂 от 10 лет</li>
+              <li>⏱️ 60–90 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (8 шт.)</p>
             <p class="product-card__price">3490 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--new" data-category="new" data-price="4990" data-rating="4.9" data-stock="order">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Покорение Марса</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Покорение Марса"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Покорение Марса</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 28 отзывов</p>
-            <p class="product-card__description">Научно-фантастическая стратегия о терраформировании планеты.</p>
+            <p class="product-card__description">Научно-фантастическая стратегия о терраформировании красной планеты.</p>
             <ul class="product-card__features">
-              <li>1–5 игроков · от 12 лет</li>
-              <li>Партия 90–120 минут</li>
+              <li>👥 1–5 игроков</li>
+              <li>🎂 от 12 лет</li>
+              <li>⏱️ 90–120 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--order">Под заказ</p>
+            <p class="product-card__stock product-card__stock--order">Под заказ (2 дня)</p>
             <p class="product-card__price">4990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="popular" data-price="1190" data-rating="4.7" data-stock="in">
-            <h3 class="product-card__title">Взрывные котята</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Взрывные котята"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Взрывные котята</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.7 · 52 отзыва</p>
             <p class="product-card__description">Ураганная карточная игра для весёлой компании и вечеринок.</p>
             <ul class="product-card__features">
-              <li>2–5 игроков · от 10 лет</li>
-              <li>Партия 15–20 минут</li>
+              <li>👥 2–5 игроков</li>
+              <li>🎂 от 10 лет</li>
+              <li>⏱️ 15–20 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (25 шт.)</p>
             <p class="product-card__price">1190 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--new" data-category="new" data-price="4690" data-rating="4.8" data-stock="in">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Крылья (Wingspan)</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Крылья"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Крылья (Wingspan)</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 19 отзывов</p>
-            <p class="product-card__description">Красивейшая стратегия о привлечении птиц в заповедники.</p>
+            <p class="product-card__description">Красивейшая стратегия о привлечении уникальных птиц в природные заповедники.</p>
             <ul class="product-card__features">
-              <li>1–5 игроков · от 10 лет</li>
-              <li>Партия 40–70 минут</li>
+              <li>👥 1–5 игроков</li>
+              <li>🎂 от 10 лет</li>
+              <li>⏱️ 40–70 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (5 шт.)</p>
             <p class="product-card__price">4690 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--new" data-category="popular new" data-price="1790" data-rating="4.9" data-stock="in">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Кодовые имена</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Кодовые имена"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Кодовые имена</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 64 отзыва</p>
-            <p class="product-card__description">Лучшая командная игра на ассоциации и дедукцию для компаний.</p>
+            <p class="product-card__description">Признанный хит на ассоциации, командную дедукцию и словесную интуицию.</p>
             <ul class="product-card__features">
-              <li>2–8 игроков · от 10 лет</li>
-              <li>Партия 15–30 минут</li>
+              <li>👥 2–8 игроков</li>
+              <li>🎂 от 10 лет</li>
+              <li>⏱️ 15–30 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (18 шт.)</p>
             <p class="product-card__price">1790 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="discount" data-price="990" data-rating="4.6" data-stock="in">
             <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Экипаж</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Экипаж"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Экипаж: Экспедиция к девятой планете</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.6 · 14 отзывов</p>
-            <p class="product-card__description">Кооперативная игра на взятки с 50 космическими миссиями.</p>
+            <p class="product-card__description">Кооперативная карточная игра с 50 космическими миссиями в компактной коробке.</p>
             <ul class="product-card__features">
-              <li>2–5 игроков · от 10 лет</li>
-              <li>Партия 20–30 минут</li>
+              <li>👥 2–5 игроков</li>
+              <li>🎂 от 10 лет</li>
+              <li>⏱️ 20–30 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (11 шт.)</p>
             <p class="product-card__price">990 руб.<s class="product-card__old-price">1390 руб.</s></p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--new" data-category="new" data-price="5490" data-rating="4.9" data-stock="order">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Дюна: Империя</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Дюна: Империя"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Дюна: Империя</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 22 отзыва</p>
-            <p class="product-card__description">Напряжённая стратегическая битва за контроль над Арракисом.</p>
+            <p class="product-card__description">Напряжённая стратегическая битва за контроль над пряностью на планете Арракис.</p>
             <ul class="product-card__features">
-              <li>1–4 игрока · от 13 лет</li>
-              <li>Партия 60–120 минут</li>
+              <li>👥 1–4 игрока</li>
+              <li>🎂 от 13 лет</li>
+              <li>⏱️ 60–120 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--order">Под заказ</p>
+            <p class="product-card__stock product-card__stock--order">Под заказ (3 дня)</p>
             <p class="product-card__price">5490 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="popular discount" data-price="2490" data-rating="4.7" data-stock="in">
             <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Имаджинариум</h3>
+            <img
+              src="images/product-1-640.jpg"
+              srcset="images/product-1-480.jpg 480w,
+                      images/product-1-640.jpg 640w,
+                      images/product-1-960.jpg 960w"
+              sizes="(max-width: 639px) 100vw,
+                     (max-width: 1023px) 50vw,
+                     33vw"
+              alt="Настольная игра Имаджинариум"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+            <h3 class="product-card__title">
+              <a href="product.html">Имаджинариум</a>
+            </h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.7 · 41 отзыв</p>
-            <p class="product-card__description">Популярнейшая игра на ассоциации и образное мышление.</p>
+            <p class="product-card__description">Классическая игра на ассоциации и образное мышление с авторскими иллюстрациями.</p>
             <ul class="product-card__features">
-              <li>4–7 игроков · от 12 лет</li>
-              <li>Партия 30–45 минут</li>
+              <li>👥 4–7 игроков</li>
+              <li>🎂 от 12 лет</li>
+              <li>⏱️ 30–45 мин</li>
             </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__stock product-card__stock--in">В наличии (16 шт.)</p>
             <p class="product-card__price">2490 руб.<s class="product-card__old-price">2990 руб.</s></p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
@@ -246,12 +439,13 @@
       </section>
     </section>
 
+    <!-- Сравнение топовых настольных игр -->
     <section class="section">
-      <h2 class="section__title">Сравнение товаров</h2>
+      <h2 class="section__title">Сравнение ключевых хитов</h2>
 
       <div class="table-wrapper">
         <table class="product-table product-table--compare">
-          <caption>Сравнение характеристик</caption>
+          <caption>Сравнение параметров популярных игр</caption>
           <thead>
             <tr>
               <th class="product-table__cell product-table__cell--head" scope="col">Характеристика</th>
@@ -285,14 +479,94 @@
               <td class="product-table__cell">60–90 минут</td>
               <td class="product-table__cell">90–120 минут</td>
             </tr>
+            <tr class="product-table__row">
+              <th class="product-table__cell" scope="row">Сложность освоения</th>
+              <td class="product-table__cell product-table__cell--accent">Низкая (10 мин)</td>
+              <td class="product-table__cell">Средняя (20 мин)</td>
+              <td class="product-table__cell">Высокая (45 мин)</td>
+            </tr>
+            <tr class="product-table__row">
+              <th class="product-table__cell" scope="row">Идеально для</th>
+              <td class="product-table__cell product-table__cell--accent">Семьи и новичков</td>
+              <td class="product-table__cell">Любителей торговли</td>
+              <td class="product-table__cell">Опытных стратегов</td>
+            </tr>
           </tbody>
         </table>
       </div>
     </section>
+
+    <!-- Экспертный гид покупателя -->
+    <section class="section">
+      <div class="aside-info">
+        <h2>Как выбрать настольную игру: советы гейм-мастеров «Ход конём»</h2>
+        <p>
+          Если вы выбираете игру впервые, обратите внимание на так называемые <strong>гейтвеи</strong> («Каркассон», «Catan», «Билет на поезд») — у них простые интуитивные правила, понятные за 10 минут, но высокий уровень стратегической глубины. Для вечеринок и больших компаний лучше подойдут словесные игры на ассоциации («Кодовые имена», «Имаджинариум»).
+        </p>
+        <p>
+          Нужна индивидуальная рекомендация? Позвоните нам по телефону <a href="tel:+74957774520">+7 (495) 777-45-20</a> или приходите на открытые игротеки в наш шоурум на Дизайн-заводе!
+        </p>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Ход конём. Все права защищены.</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="tel:+74957774520">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="mailto:info@hod-konem.ru">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="index.html#faq">Доставка и оплата</a></li>
+            <li><a href="index.html#faq">Гарантия и возврат</a></li>
+            <li><a href="contacts.html">Шоурум и клуб игротек</a></li>
+            <li><a href="contacts.html#feedback">Обратная связь</a></li>
+            <li><a href="index.html#reviews">Отзывы покупателей</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">MasterCard</span>
+            <span class="payment-badge">Долями</span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
   <a class="to-top" href="#top">Наверх</a>

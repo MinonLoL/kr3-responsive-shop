@@ -588,3 +588,92 @@ main {
     bottom: 32px;
   }
 }
+
+
+/* ==========================================================================
+   12. Адаптивность коммерческих блоков интернет-магазина
+   ========================================================================== */
+
+/* Верхняя полоса анонсов */
+.top-announcement__inner {
+  font-size: clamp(11px, 2vw, 13px);
+  text-align: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .top-announcement__inner {
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* Верхний ряд шапки на мобильных */
+.site-header__top-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.site-header__search {
+  width: 100%;
+  max-width: 100%;
+}
+
+.site-header__actions {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .site-header__top-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-header__search {
+    width: auto;
+    flex: 1 1 260px;
+  }
+
+  .site-header__actions {
+    width: auto;
+  }
+}
+
+/* Сетки преимуществ и футера на мобильных устройствах */
+.trust-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .trust-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.site-footer__grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  }
+}

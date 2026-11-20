@@ -3,15 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контакты интернет-магазина настольных игр «Ход конём». Адрес шоурума в Москве, телефон, электронная почта и график работы клуба игротек.">
-  <title>Контакты — Ход конём</title>
+  <meta name="description" content="Контакты интернет-магазина настольных игр «Ход конём». Адрес флагманского шоурума в Москве, телефоны, график работы игротек и реквизиты компании.">
+  <title>Контакты и шоурум — Ход конём</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="tel:+74957774520">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">Ход конём</a>
+      <div class="site-header__top-row">
+        <a class="site-header__logo" href="index.html">
+          Ход конём
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </a>
+
+        <div class="site-header__search" role="search">
+          <label class="visually-hidden" for="site-search">Поиск по каталогу настольных игр</label>
+          <input class="site-header__search-input" id="site-search" type="search" placeholder="Поиск настольной игры, жанра или автора...">
+          <button class="site-header__search-btn" type="button" aria-label="Найти">🔍</button>
+        </div>
+
+        <div class="site-header__actions">
+          <a class="header-action" href="tel:+74957774520" title="Служба заботы о клиентах">
+            <span class="header-action__icon" aria-hidden="true">📞</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">10:00–22:00</span>
+              <span class="header-action__main">+7 (495) 777-45-20</span>
+            </span>
+          </a>
+          <a class="header-action header-action--cart" href="order.html" title="Перейти к оформлению заказа">
+            <span class="header-action__icon" aria-hidden="true">🛒</span>
+            <span class="header-action__text">
+              <span class="header-action__sub">Быстрый заказ</span>
+              <span class="header-action__main">Корзина</span>
+            </span>
+          </a>
+        </div>
+      </div>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -51,25 +88,132 @@
     </nav>
 
     <section class="section">
-      <h1>Контакты магазина «Ход конём»</h1>
-      <p>Мы всегда рады ответить на ваши вопросы, помочь с выбором настольной игры или забронировать стол для игротеки.</p>
-      <ul>
-        <li>Телефон: +7 (495) 777-45-20 (ежедневно с 10:00 до 22:00)</li>
-        <li>E-mail: info@hod-konem.ru</li>
-        <li>Адрес: г. Москва, ул. Большая Новодмитровская, д. 36, стр. 2 (Дизайн-завод, вход 4)</li>
-        <li>Время работы: ежедневно с 10:00 до 22:00 без перерывов</li>
-      </ul>
+      <h1>Контакты магазина и клуба «Ход конём»</h1>
+      <p>
+        Мы всегда рады проконсультировать вас по выбору настольных игр, помочь с оформлением заказа,
+        а также приглашаем в наш просторный клуб игротек для партий в любимые хиты и горячие новинки.
+      </p>
+
+      <!-- Карточки отделов -->
+      <div class="contacts-grid">
+        <article class="contact-card">
+          <h2 class="contact-card__title">📞 Отдел продаж</h2>
+          <p>Консультации по ассортименту, наличию и статусу доставки заказов:</p>
+          <p>
+            <strong>Телефон:</strong> <a href="tel:+74957774520">+7 (495) 777-45-20</a><br>
+            <strong>E-mail:</strong> <a href="mailto:info@hod-konem.ru">info@hod-konem.ru</a><br>
+            <strong>Режим работы:</strong> ежедневно с 10:00 до 22:00
+          </p>
+        </article>
+
+        <article class="contact-card">
+          <h2 class="contact-card__title">🎲 Клуб игротек</h2>
+          <p>Бронирование столов, расписание открытых турниров и игротек:</p>
+          <p>
+            <strong>Телефон:</strong> <a href="tel:+74957774521">+7 (495) 777-45-21</a><br>
+            <strong>E-mail:</strong> <a href="mailto:club@hod-konem.ru">club@hod-konem.ru</a><br>
+            <strong>Игротеки:</strong> Чт (18:00–22:00), Сб-Вс (12:00–21:00)
+          </p>
+        </article>
+
+        <article class="contact-card">
+          <h2 class="contact-card__title">📍 Шоурум в Москве</h2>
+          <p>Флагманский магазин, пункт выдачи заказов и клуб настолок:</p>
+          <p>
+            <strong>Адрес:</strong> г. Москва, ул. Большая Новодмитровская, д. 36, стр. 2<br>
+            <strong>Ориентир:</strong> Дизайн-завод, вход №4, 2 этаж<br>
+            <strong>Метро:</strong> «Дмитровская» (5 минут пешком)
+          </p>
+        </article>
+      </div>
+
+      <!-- Схема проезда и ориентиры -->
+      <div class="route-box">
+        <h2>Как добраться до флагманского магазина «Ход конём»</h2>
+        <ol class="route-steps">
+          <li><strong>От станции метро «Дмитровская» (Серпуховско-Тимирязевская линия):</strong> выход из метро №4, пройти прямо по Бутырской улице 50 метров до перекрёстка с Новодмитровской улицей.</li>
+          <li><strong>Пеший маршрут (около 350 метров):</strong> повернуть направо на Большую Новодмитровскую улицу и двигаться прямо вдоль арт-пространства Дизайн-завод.</li>
+          <li><strong>Вход в магазин:</strong> войдите через арку на территорию Дизайн-завода, корпус 2, вход №4 со стороны главной площади. Поднимитесь по лестнице на 2 этаж — вас встретит вывеска «Ход конём».</li>
+          <li><strong>Для автомобилистов:</strong> городская парковка на Большой Новодмитровской улице либо гостевой паркинг на территории Дизайн-завода со стороны улицы Складочной.</li>
+        </ol>
+      </div>
+
+      <!-- Юридические реквизиты -->
+      <div class="aside-info">
+        <h2>Реквизиты организации</h2>
+        <p>
+          <strong>ООО «Ход Конём Ритейл»</strong><br>
+          ОГРН: 1247700123456 · ИНН: 7715987654 · КПП: 771501001<br>
+          Юридический адрес: 127015, г. Москва, ул. Большая Новодмитровская, д. 36, стр. 2, пом. 12<br>
+          Расчётный счёт: 40702810900000123456 в АО «Тинькофф Банк» · БИК: 044525974
+        </p>
+      </div>
     </section>
 
     <section class="section" id="feedback">
-      <h2 class="section__title">Обратная связь</h2>
+      <h2 class="section__title">Обратная связь и заказ</h2>
       <p>Остались вопросы по наличию конкретного издания или хотите оформить предзаказ? Оставьте заявку через форму заказа.</p>
       <a class="button button--primary" href="order.html">Перейти к форме заказа</a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Ход конём. Все права защищены.</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="tel:+74957774520">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="mailto:info@hod-konem.ru">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="index.html#faq">Доставка и оплата</a></li>
+            <li><a href="index.html#faq">Гарантия и возврат</a></li>
+            <li><a href="contacts.html">Шоурум и клуб игротек</a></li>
+            <li><a href="contacts.html#feedback">Обратная связь</a></li>
+            <li><a href="index.html#reviews">Отзывы покупателей</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">MasterCard</span>
+            <span class="payment-badge">Долями</span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
   <a class="to-top" href="#top">Наверх</a>
