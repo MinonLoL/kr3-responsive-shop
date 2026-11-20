@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Учебный интернет-магазин</title>
-  <meta name="description" content="Учебный frontend-проект интернет-магазина.">
+  <title>Ход конём — интернет-магазин настольных игр</title>
+  <meta name="description" content="Интернет-магазин настольных игр «Ход конём»: широкий выбор семейных, стратегических, карточных и детских игр с доставкой.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:title" content="Ход конём — интернет-магазин настольных игр">
+  <meta property="og:description" content="Широкий выбор настольных игр для любого возраста и компании. Новинки, признанные хиты и аксессуары.">
   <meta property="og:image" content="https://MinonLoL.github.io/kr1-html-css-shop/images/preview.jpg">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -16,7 +16,7 @@
 <body>
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Ход конём</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -52,20 +52,19 @@
   <main>
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">Учебный интернет-магазин</h1>
+        <h1 class="hero__title">Магазин настольных игр «Ход конём»</h1>
         <p>
-          Это стартовая страница учебного frontend-проекта.
-          В рамках практической работы №12 реализована адаптивная вёрстка под экраны от 360px до 1440px+
-          с использованием подхода Mobile First.
+          Откройте мир ярких приключений, тактических баталий и тёплых семейных вечеров.
+          В нашем каталоге собраны лучшие мировые хиты и свежие новинки для любой компании.
         </p>
-        <a class="button button--primary" href="#popular">Перейти к товарам</a>
+        <a class="button button--primary" href="#popular">Перейти к играм</a>
       </div>
       <picture class="hero__picture">
         <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg">
         <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg">
         <img
           src="images/hero-mobile.jpg"
-          alt="Каталог учебных товаров"
+          alt="Коллекция настольных игр на столе"
           width="640"
           height="360"
           class="hero__image"
@@ -74,12 +73,12 @@
     </section>
 
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества проекта</h2>
+      <h2 class="section__title">Преимущества магазина</h2>
       <ul class="advantages-list">
-        <li>понятная HTML-структура и Mobile First архитектура;</li>
-        <li>семантические блоки страницы и доступность (a11y);</li>
-        <li>подключение внешних адаптивных CSS-стилей (responsive.css);</li>
-        <li>адаптивные изображения с picture, srcset и sizes.</li>
+        <li>более 500 популярных и редких настольных изданий в наличии;</li>
+        <li>только оригинальные сертифицированные коробки от официальных издателей;</li>
+        <li>быстрая курьерская доставка по городу и отправка по всей России;</li>
+        <li>бесплатные консультации гейм-мастеров по подбору игр.</li>
       </ul>
     </section>
 
@@ -96,16 +95,16 @@
             sizes="(max-width: 639px) 100vw,
                    (max-width: 1023px) 50vw,
                    33vw"
-            alt="Учебный товар 1: базовая модель"
+            alt="Настольная игра Каркассон"
             width="640"
             height="480"
             loading="lazy"
             class="product-card__image"
           >
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
+          <h3 class="product-card__title">Каркассон</h3>
+          <p class="product-card__description">Легендарная семейная стратегия о строительстве средневековых замков, дорог и монастырей.</p>
+          <p class="product-card__price">Цена: 1990 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Каркассон">
             Заказать
           </button>
         </article>
@@ -119,16 +118,16 @@
             sizes="(max-width: 639px) 100vw,
                    (max-width: 1023px) 50vw,
                    33vw"
-            alt="Учебный товар 2: популярная модель"
+            alt="Настольная игра Catan (Колонизаторы)"
             width="640"
             height="480"
             loading="lazy"
             class="product-card__image"
           >
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
+          <h3 class="product-card__title">Catan (Колонизаторы)</h3>
+          <p class="product-card__description">Мировой бестселлер об освоении острова, торговле ресурсами и развитии поселений.</p>
+          <p class="product-card__price">Цена: 3490 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Catan (Колонизаторы)">
             Заказать
           </button>
         </article>
@@ -142,16 +141,16 @@
             sizes="(max-width: 639px) 100vw,
                    (max-width: 1023px) 50vw,
                    33vw"
-            alt="Учебный товар 3: премиум вариант"
+            alt="Настольная игра Покорение Марса"
             width="640"
             height="480"
             loading="lazy"
             class="product-card__image"
           >
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
+          <h3 class="product-card__title">Покорение Марса</h3>
+          <p class="product-card__description">Глубокая научно-фантастическая стратегия об управлении корпорациями и терраформировании планеты.</p>
+          <p class="product-card__price">Цена: 4990 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Покорение Марса">
             Заказать
           </button>
         </article>
@@ -255,22 +254,21 @@
     </section>
 
     <aside class="aside-info">
-      <h2>Информация для студентов</h2>
+      <h2>Клуб настольных игр и игротеки</h2>
       <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
+        Каждые выходные в нашем шоуруме проходят открытые игротеки.
+        Приходите знакомиться с новинками, изучать правила с опытными мастерами
+        и находить компанию для увлекательных партий.
       </p>
     </aside>
   </main>
 
   <footer class="site-footer" id="contacts">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <p>&copy; 2026 Ход конём. Все права защищены.</p>
   </footer>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 id="order-dialog-title">Оформление заявки</h2>
+    <h2 id="order-dialog-title">Оформление заказа</h2>
 
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
@@ -305,16 +303,16 @@
         <label class="order-form__label" for="order-topic">Тема заявки</label>
         <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
+          <option value="product">Покупка настольной игры</option>
+          <option value="consultation">Консультация по выбору игры</option>
+          <option value="delivery">Вопрос по доставке и самовывозу</option>
         </select>
       </div>
 
       <div class="order-form__field order-form__field--wide">
         <label class="order-form__label" for="order-comment">Комментарий</label>
         <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
-          placeholder="Укажите дополнительную информацию"></textarea>
+          placeholder="Укажите адрес доставки, удобное время или пожелания к заказу"></textarea>
       </div>
 
       <div class="order-form__field order-form__field--checkbox">
@@ -327,13 +325,13 @@
 
       <div class="order-form__actions">
         <button class="button button--secondary" type="button" id="close-order-dialog" aria-label="Закрыть окно оформления заявки">Закрыть</button>
-        <button class="button button--primary" type="submit">Отправить заявку</button>
+        <button class="button button--primary" type="submit">Подтвердить заказ</button>
       </div>
     </form>
   </dialog>
 
   <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
+    Заказ успешно оформлен! Мы свяжемся с вами в течение 15 минут.
   </p>
 
   <a class="to-top" href="#top">Наверх</a>

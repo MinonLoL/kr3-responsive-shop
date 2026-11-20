@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина: фильтрация, сортировка и подробные карточки.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta name="description" content="Каталог настольных игр магазина «Ход конём»: стратегии, семейные, детские и игры для вечеринок. Удобные фильтры и сортировка.">
+  <title>Каталог настольных игр — Ход конём</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Ход конём</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -51,9 +51,9 @@
     </nav>
 
     <section class="section">
-      <h1>Каталог товаров</h1>
+      <h1>Каталог настольных игр</h1>
       <p>
-        Выберите товары по категории, цене и наличию. Фильтры остаются на экране при прокрутке списка.
+        Выберите настольную игру по категории, цене и наличию. Фильтры остаются на экране при прокрутке списка.
       </p>
     </section>
 
@@ -82,7 +82,7 @@
               type="number" min="0" placeholder="0">
             <label class="catalog-filters__label" for="price-to">До</label>
             <input class="catalog-filters__input" id="price-to" name="price-to"
-              type="number" min="0" placeholder="5000">
+              type="number" min="0" placeholder="6000">
           </fieldset>
 
           <fieldset class="catalog-filters__group">
@@ -117,126 +117,127 @@
 
         <div class="products-grid" id="catalog-grid">
 
-          <article class="product-card product-card--discount" data-category="discount" data-price="1000" data-rating="4.8" data-stock="in">
+          <article class="product-card product-card--discount" data-category="discount" data-price="1990" data-rating="4.9" data-stock="in">
             <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 24 отзыва</p>
-            <p class="product-card__description">Базовая модель для повседневных задач.</p>
-            <ul class="product-card__features">
-              <li>Гарантия 6 месяцев</li>
-              <li>Доставка за 2 дня</li>
-            </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">1000 руб.<s class="product-card__old-price">1200 руб.</s></p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
-          </article>
-
-          <article class="product-card" data-category="popular" data-price="1500" data-rating="4.6" data-stock="in">
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.6 · 31 отзыв</p>
-            <p class="product-card__description">Самый выбираемый товар в своей категории.</p>
-            <ul class="product-card__features">
-              <li>Гарантия 12 месяцев</li>
-              <li>Стандартная комплектация</li>
-            </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">1500 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
-          </article>
-
-          <article class="product-card product-card--new" data-category="new" data-price="2000" data-rating="4.2" data-stock="order">
-            <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 4 из 5">★★★★☆</span> 4.2 · 9 отзывов</p>
-            <p class="product-card__description">Премиум-вариант с усиленными материалами.</p>
-            <ul class="product-card__features">
-              <li>Гарантия 24 месяца</li>
-              <li>Премиум-материалы</li>
-            </ul>
-            <p class="product-card__stock product-card__stock--order">Под заказ</p>
-            <p class="product-card__price">2000 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
-          </article>
-
-          <article class="product-card" data-category="popular" data-price="800" data-rating="4.4" data-stock="in">
-            <h3 class="product-card__title">Товар 4</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 4 из 5">★★★★☆</span> 4.4 · 17 отзывов</p>
-            <p class="product-card__description">Компактный вариант для небольших пространств.</p>
-            <ul class="product-card__features">
-              <li>Гарантия 6 месяцев</li>
-              <li>Компактный размер</li>
-            </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">800 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
-          </article>
-
-          <article class="product-card product-card--new" data-category="new" data-price="1200" data-rating="4.7" data-stock="in">
-            <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Товар 5</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.7 · 12 отзывов</p>
-            <p class="product-card__description">Обновлённая версия с расширенной комплектацией.</p>
-            <ul class="product-card__features">
-              <li>Гарантия 12 месяцев</li>
-              <li>Расширенная комплектация</li>
-            </ul>
-            <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">1200 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
-          </article>
-
-          <article class="product-card" data-category="popular new" data-price="3500" data-rating="4.9" data-stock="in">
-            <h3 class="product-card__title">Товар 6</h3>
+            <h3 class="product-card__title">Каркассон</h3>
             <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 48 отзывов</p>
-            <p class="product-card__description">Лидер продаж последнего месяца.</p>
+            <p class="product-card__description">Мировой хит о строительстве средневековых замков и дорог.</p>
             <ul class="product-card__features">
-              <li>Гарантия 24 месяца</li>
-              <li>Лидер продаж</li>
+              <li>2–5 игроков · от 7 лет</li>
+              <li>Партия 35–45 минут</li>
             </ul>
             <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">3500 руб.</p>
+            <p class="product-card__price">1990 руб.<s class="product-card__old-price">2490 руб.</s></p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
-          <article class="product-card product-card--discount" data-category="discount" data-price="650" data-rating="3.9" data-stock="in">
-            <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Товар 7</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 4 из 5">★★★★☆</span> 3.9 · 6 отзывов</p>
-            <p class="product-card__description">Ограниченная партия по сниженной цене.</p>
+          <article class="product-card" data-category="popular" data-price="3490" data-rating="4.8" data-stock="in">
+            <h3 class="product-card__title">Catan (Колонизаторы)</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 36 отзывов</p>
+            <p class="product-card__description">Экономическая стратегия о торговле и освоении острова.</p>
             <ul class="product-card__features">
-              <li>Гарантия 6 месяцев</li>
-              <li>Ограниченная партия</li>
+              <li>3–4 игрока · от 10 лет</li>
+              <li>Партия 60–90 минут</li>
             </ul>
             <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">650 руб.<s class="product-card__old-price">900 руб.</s></p>
+            <p class="product-card__price">3490 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
-          <article class="product-card product-card--new" data-category="new" data-price="2500" data-rating="4.3" data-stock="order">
+          <article class="product-card product-card--new" data-category="new" data-price="4990" data-rating="4.9" data-stock="order">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Товар 8</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 4 из 5">★★★★☆</span> 4.3 · 11 отзывов</p>
-            <p class="product-card__description">Изготавливается под индивидуальный заказ.</p>
+            <h3 class="product-card__title">Покорение Марса</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 28 отзывов</p>
+            <p class="product-card__description">Научно-фантастическая стратегия о терраформировании планеты.</p>
             <ul class="product-card__features">
-              <li>Гарантия 12 месяцев</li>
-              <li>Индивидуальные параметры</li>
+              <li>1–5 игроков · от 12 лет</li>
+              <li>Партия 90–120 минут</li>
             </ul>
             <p class="product-card__stock product-card__stock--order">Под заказ</p>
-            <p class="product-card__price">2500 руб.</p>
+            <p class="product-card__price">4990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
-          <article class="product-card product-card--discount" data-category="popular discount" data-price="4200" data-rating="4.5" data-stock="in">
-            <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Товар 9</h3>
-            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.5 · 22 отзыва</p>
-            <p class="product-card__description">Комплект из двух предметов со скидкой.</p>
+          <article class="product-card" data-category="popular" data-price="1190" data-rating="4.7" data-stock="in">
+            <h3 class="product-card__title">Взрывные котята</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.7 · 52 отзыва</p>
+            <p class="product-card__description">Ураганная карточная игра для весёлой компании и вечеринок.</p>
             <ul class="product-card__features">
-              <li>Гарантия 24 месяца</li>
-              <li>Комплект из двух предметов</li>
+              <li>2–5 игроков · от 10 лет</li>
+              <li>Партия 15–20 минут</li>
             </ul>
             <p class="product-card__stock product-card__stock--in">В наличии</p>
-            <p class="product-card__price">4200 руб.<s class="product-card__old-price">4800 руб.</s></p>
+            <p class="product-card__price">1190 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card product-card--new" data-category="new" data-price="4690" data-rating="4.8" data-stock="in">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <h3 class="product-card__title">Крылья (Wingspan)</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 19 отзывов</p>
+            <p class="product-card__description">Красивейшая стратегия о привлечении птиц в заповедники.</p>
+            <ul class="product-card__features">
+              <li>1–5 игроков · от 10 лет</li>
+              <li>Партия 40–70 минут</li>
+            </ul>
+            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__price">4690 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card product-card--new" data-category="popular new" data-price="1790" data-rating="4.9" data-stock="in">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <h3 class="product-card__title">Кодовые имена</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 64 отзыва</p>
+            <p class="product-card__description">Лучшая командная игра на ассоциации и дедукцию для компаний.</p>
+            <ul class="product-card__features">
+              <li>2–8 игроков · от 10 лет</li>
+              <li>Партия 15–30 минут</li>
+            </ul>
+            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__price">1790 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card product-card--discount" data-category="discount" data-price="990" data-rating="4.6" data-stock="in">
+            <span class="product-card__badge">Скидка</span>
+            <h3 class="product-card__title">Экипаж</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.6 · 14 отзывов</p>
+            <p class="product-card__description">Кооперативная игра на взятки с 50 космическими миссиями.</p>
+            <ul class="product-card__features">
+              <li>2–5 игроков · от 10 лет</li>
+              <li>Партия 20–30 минут</li>
+            </ul>
+            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__price">990 руб.<s class="product-card__old-price">1390 руб.</s></p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card product-card--new" data-category="new" data-price="5490" data-rating="4.9" data-stock="order">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <h3 class="product-card__title">Дюна: Империя</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 22 отзыва</p>
+            <p class="product-card__description">Напряжённая стратегическая битва за контроль над Арракисом.</p>
+            <ul class="product-card__features">
+              <li>1–4 игрока · от 13 лет</li>
+              <li>Партия 60–120 минут</li>
+            </ul>
+            <p class="product-card__stock product-card__stock--order">Под заказ</p>
+            <p class="product-card__price">5490 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <article class="product-card product-card--discount" data-category="popular discount" data-price="2490" data-rating="4.7" data-stock="in">
+            <span class="product-card__badge">Скидка</span>
+            <h3 class="product-card__title">Имаджинариум</h3>
+            <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.7 · 41 отзыв</p>
+            <p class="product-card__description">Популярнейшая игра на ассоциации и образное мышление.</p>
+            <ul class="product-card__features">
+              <li>4–7 игроков · от 12 лет</li>
+              <li>Партия 30–45 минут</li>
+            </ul>
+            <p class="product-card__stock product-card__stock--in">В наличии</p>
+            <p class="product-card__price">2490 руб.<s class="product-card__old-price">2990 руб.</s></p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
         </div>
@@ -254,35 +255,35 @@
           <thead>
             <tr>
               <th class="product-table__cell product-table__cell--head" scope="col">Характеристика</th>
-              <th class="product-table__cell product-table__cell--head" scope="col">Товар 1</th>
-              <th class="product-table__cell product-table__cell--head" scope="col">Товар 2</th>
-              <th class="product-table__cell product-table__cell--head" scope="col">Товар 3</th>
+              <th class="product-table__cell product-table__cell--head" scope="col">Каркассон</th>
+              <th class="product-table__cell product-table__cell--head" scope="col">Catan (Колонизаторы)</th>
+              <th class="product-table__cell product-table__cell--head" scope="col">Покорение Марса</th>
             </tr>
           </thead>
           <tbody>
             <tr class="product-table__row">
               <th class="product-table__cell" scope="row">Цена</th>
-              <td class="product-table__cell">1000 руб.</td>
-              <td class="product-table__cell product-table__cell--accent">1500 руб.</td>
-              <td class="product-table__cell">2000 руб.</td>
+              <td class="product-table__cell product-table__cell--accent">1990 руб.</td>
+              <td class="product-table__cell">3490 руб.</td>
+              <td class="product-table__cell">4990 руб.</td>
             </tr>
             <tr class="product-table__row">
-              <th class="product-table__cell" scope="row">Категория</th>
-              <td class="product-table__cell">Базовый</td>
-              <td class="product-table__cell product-table__cell--accent">Популярный</td>
-              <td class="product-table__cell">Премиум</td>
+              <th class="product-table__cell" scope="row">Жанр</th>
+              <td class="product-table__cell product-table__cell--accent">Семейная стратегия</td>
+              <td class="product-table__cell">Экономическая стратегия</td>
+              <td class="product-table__cell">Научная фантастика</td>
             </tr>
             <tr class="product-table__row">
-              <th class="product-table__cell" scope="row">Наличие</th>
-              <td class="product-table__cell">В наличии</td>
-              <td class="product-table__cell product-table__cell--accent">В наличии</td>
-              <td class="product-table__cell">Под заказ</td>
+              <th class="product-table__cell" scope="row">Число игроков</th>
+              <td class="product-table__cell product-table__cell--accent">2–5 человек</td>
+              <td class="product-table__cell">3–4 человека</td>
+              <td class="product-table__cell">1–5 человек</td>
             </tr>
             <tr class="product-table__row">
-              <th class="product-table__cell" scope="row">Гарантия</th>
-              <td class="product-table__cell">6 месяцев</td>
-              <td class="product-table__cell product-table__cell--accent">12 месяцев</td>
-              <td class="product-table__cell">24 месяца</td>
+              <th class="product-table__cell" scope="row">Время партии</th>
+              <td class="product-table__cell product-table__cell--accent">35–45 минут</td>
+              <td class="product-table__cell">60–90 минут</td>
+              <td class="product-table__cell">90–120 минут</td>
             </tr>
           </tbody>
         </table>
@@ -291,8 +292,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <p>&copy; 2026 Ход конём. Все права защищены.</p>
   </footer>
 
   <a class="to-top" href="#top">Наверх</a>
