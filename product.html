@@ -57,10 +57,10 @@
             <a class="site-nav__link" href="index.html">Главная</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
+            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Карточка товара</a>
+            <a class="site-nav__link" href="order.html">Заявка</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -123,7 +123,8 @@
         <div class="product__buy">
           <label for="quantity">Количество</label>
           <input class="product__quantity" id="quantity" name="quantity" type="number" min="1" max="14" value="1">
-          <a class="button button--primary" href="order.html">Оформить заказ</a>
+          <a class="button button--primary" href="order.html">Оформить заявку</a>
+          <a class="button button--secondary" href="catalog.html">← В каталог</a>
         </div>
 
         <ul class="product__perks">
@@ -274,8 +275,7 @@
           <h3 class="site-footer__title">Покупателям</h3>
           <ul class="site-footer__links">
             <li><a href="catalog.html">Каталог товаров</a></li>
-            <li><a href="product.html">Карточка товара</a></li>
-            <li><a href="order.html">Оформление заказа</a></li>
+            <li><a href="order.html">Оформление заявки</a></li>
             <li><a href="contacts.html">Контакты и шоурум</a></li>
             <li><a href="contacts.html">Схема проезда на карте</a></li>
           </ul>
