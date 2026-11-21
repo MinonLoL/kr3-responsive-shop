@@ -208,6 +208,13 @@ main {
   min-height: 48px;
 }
 
+@media (max-width: 480px) {
+  .hero .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .hero__picture {
   display: block;
   width: 100%;
@@ -254,6 +261,8 @@ main {
 .product-card__button {
   margin-top: auto;
   min-height: 44px;
+  width: 100%;
+  justify-content: center;
 }
 
 @media (min-width: 640px) {

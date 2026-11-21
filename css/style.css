@@ -320,32 +320,36 @@ textarea:focus-visible {
 }
 
 .hero__subtitle {
-  font-size: clamp(16px, 2.2vw, 20px);
+  font-size: clamp(16px, 2vw, 19px);
   color: #d1c5b4;
-  line-height: 1.5;
-  margin: var(--space-sm) 0 var(--space-lg);
-  max-width: 480px;
+  line-height: 1.45;
+  margin: 6px 0 16px;
+  max-width: 460px;
 }
 
 .hero__actions {
-  margin-bottom: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .hero__cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 34px;
-  font-size: 17px;
+  padding: 13px 32px;
+  font-size: 16px;
   font-weight: 700;
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.38);
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.38);
 }
 
 .hero__features {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md) var(--space-lg);
-  padding-top: var(--space-md);
+  gap: 12px 20px;
+  padding-top: 16px;
   border-top: 1px solid rgba(245, 158, 11, 0.15);
 }
 
@@ -514,7 +518,12 @@ textarea:focus-visible {
 
 .product-card__button {
   margin-top: auto;
-  align-self: flex-start;
+  width: 100%;
+  justify-content: center;
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: var(--radius-full);
 }
 
 /* Теги характеристик настольной игры в карточке */
@@ -802,13 +811,15 @@ textarea:focus-visible {
 
 .catalog-filters__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-top: var(--space-xs);
+  gap: 10px;
+  margin-top: var(--space-sm);
 }
 
 .catalog-filters__actions .button {
-  flex: 1 1 auto;
+  flex: 1 1 0;
+  justify-content: center;
+  padding: 10px 14px;
+  font-size: 14px;
 }
 
 .catalog-products {
@@ -948,8 +959,15 @@ textarea:focus-visible {
 
 .order-form__actions {
   display: flex;
-  gap: 12px;
   margin-top: var(--space-lg);
+}
+
+.order-form__actions .button {
+  width: 100%;
+  padding: 13px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: center;
 }
 
 .order-form--page {
@@ -1100,19 +1118,45 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  gap: 12px;
+  margin: var(--space-md) 0 var(--space-lg);
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.product__buy label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-muted);
 }
 
 .product__quantity {
-  width: 90px;
+  width: 72px;
   padding: 10px 12px;
   border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font: inherit;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
+}
+
+.product__buy .button--primary {
+  flex: 1 1 180px;
+  padding: 12px 24px;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.product__buy .button--secondary {
+  flex: 0 1 auto;
+  padding: 12px 20px;
+  font-size: 15px;
+  justify-content: center;
 }
 
 .product__perks {
