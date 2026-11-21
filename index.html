@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ход конём — интернет-магазин настольных игр">
   <meta property="og:description" content="Широкий выбор оригинальных настольных игр: мировые хиты, свежие новинки, аксессуары и клуб игротек в Москве.">
-  <meta property="og:image" content="https://MinonLoL.github.io/kr1-html-css-shop/images/preview.jpg">
+  <meta property="og:image" content="https://MinonLoL.github.io/kr3-responsive-shop/images/preview.jpg">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
@@ -77,27 +77,80 @@
   </header>
 
   <main>
-    <!-- Главный баннер (Hero) -->
+    <!-- Главный баннер (Hero) в стиле макета «Ход конём» -->
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">Магазин настольных игр «Ход конём»</h1>
-        <p>
-          Откройте мир ярких приключений, тактических баталий и тёплых семейных вечеров.
-          В нашем каталоге собраны лучшие мировые хиты и свежие новинки для любой компании.
+        <div class="hero__badge" aria-hidden="true">
+          <svg width="48" height="34" viewBox="0 0 48 36" fill="none">
+            <path d="M4 30h40M6 28l4-18 9 9 5-13 5 13 9-9 4 18H6z" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="10" r="2.5" fill="#f59e0b"/>
+            <circle cx="24" cy="6" r="2.5" fill="#f59e0b"/>
+            <circle cx="38" cy="10" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </div>
+
+        <h1 class="hero__title">
+          Ход конём
+          <span class="hero__swoosh" aria-hidden="true"></span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Настольные игры для больших и маленьких побед!
         </p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
-          <a class="button button--secondary" href="contacts.html">Шоурум и клуб</a>
+
+        <div class="hero__actions">
+          <a class="button button--primary hero__cta-btn" href="catalog.html">
+            Перейти в каталог <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hero__features" aria-label="Преимущества магазина">
+          <div class="hero__feature">
+            <div class="hero__feature-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                <circle cx="8" cy="8" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="16" cy="8" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="12" cy="12" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="8" cy="16" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="16" cy="16" r="1.5" fill="#f59e0b"></circle>
+              </svg>
+            </div>
+            <span class="hero__feature-text">Огромный выбор игр</span>
+          </div>
+
+          <div class="hero__feature">
+            <div class="hero__feature-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <span class="hero__feature-text">Быстрая доставка</span>
+          </div>
+
+          <div class="hero__feature">
+            <div class="hero__feature-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <span class="hero__feature-text">Гарантия качества</span>
+          </div>
         </div>
       </div>
+
       <picture class="hero__picture">
         <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg">
         <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg">
         <img
           src="images/hero-mobile.jpg"
-          alt="Коллекция настольных игр на столе"
-          width="640"
-          height="360"
+          alt="Резной деревянный шахматный конь в золотой короне, кубики и настольные игры"
+          width="600"
+          height="450"
           class="hero__image"
         >
       </picture>
