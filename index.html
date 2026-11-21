@@ -9,6 +9,9 @@
   <meta property="og:title" content="Ход конём — интернет-магазин настольных игр">
   <meta property="og:description" content="Широкий выбор оригинальных настольных игр: мировые хиты, свежие новинки, аксессуары и клуб игротек в Москве.">
   <meta property="og:image" content="https://MinonLoL.github.io/kr3-responsive-shop/images/preview.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
@@ -25,36 +28,15 @@
 
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <!-- Верхний ряд: Логотип, Поиск, Быстрые действия -->
-      <div class="site-header__top-row">
-        <a class="site-header__logo" href="index.html">
-          Ход конём
+      <a class="site-header__logo" href="index.html">
+        <svg class="site-header__logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19 22H5v-2h14v2M17.5 12c-.3 0-.5-.2-.5-.5 0-1.1-.9-2-2-2-.3 0-.5-.2-.5-.5s.2-.5.5-.5c1.7 0 3 1.3 3 3 0 .3-.2.5-.5.5M19 17H5l1.2-4.8c.5-1.9 1.9-3.4 3.7-4l.6-1.2C10.8 6.4 11 5.7 11 5c0-.6.4-1 1-1h1c.6 0 1 .4 1 1 0 .7.2 1.4.5 2l.6 1.2c1.8.6 3.2 2.1 3.7 4L19 17z"/>
+        </svg>
+        <span class="site-header__logo-text">
+          <span class="site-header__brand">Ход конем</span>
           <span class="site-header__tagline">Магазин настольных игр</span>
-        </a>
-
-        <div class="site-header__search" role="search">
-          <label class="visually-hidden" for="site-search">Поиск по каталогу настольных игр</label>
-          <input class="site-header__search-input" id="site-search" type="search" placeholder="Поиск игры, жанра или механики...">
-          <button class="site-header__search-btn" type="button" aria-label="Найти">🔍</button>
-        </div>
-
-        <div class="site-header__actions">
-          <a class="header-action" href="contacts.html" title="Контакты и шоурум">
-            <span class="header-action__icon" aria-hidden="true">📞</span>
-            <span class="header-action__text">
-              <span class="header-action__sub">10:00–22:00</span>
-              <span class="header-action__main">+7 (495) 777-45-20</span>
-            </span>
-          </a>
-          <a class="header-action header-action--cart" href="order.html" title="Перейти к оформлению заказа">
-            <span class="header-action__icon" aria-hidden="true">🛒</span>
-            <span class="header-action__text">
-              <span class="header-action__sub">Быстрый заказ</span>
-              <span class="header-action__main">Корзина</span>
-            </span>
-          </a>
-        </div>
-      </div>
+        </span>
+      </a>
 
       <!-- Главная навигация: 4 полные страницы без якорей -->
       <nav class="site-nav" aria-label="Основная навигация">
@@ -73,6 +55,29 @@
           </li>
         </ul>
       </nav>
+
+      <div class="site-header__actions">
+        <a class="header-action-icon" href="catalog.html" aria-label="Поиск по каталогу" title="Поиск">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <a class="header-action-icon" href="contacts.html" aria-label="Контакты и шоурум" title="Контакты и шоурум">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <a class="header-action-icon header-action-icon--cart" href="order.html" aria-label="Корзина: 0 товаров" title="Корзина">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="header-cart-badge" aria-hidden="true">0</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -81,17 +86,25 @@
     <section class="hero">
       <div class="hero__content">
         <div class="hero__badge" aria-hidden="true">
-          <svg width="48" height="34" viewBox="0 0 48 36" fill="none">
-            <path d="M4 30h40M6 28l4-18 9 9 5-13 5 13 9-9 4 18H6z" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="10" cy="10" r="2.5" fill="#f59e0b"/>
-            <circle cx="24" cy="6" r="2.5" fill="#f59e0b"/>
-            <circle cx="38" cy="10" r="2.5" fill="#f59e0b"/>
+          <svg class="hero__crown-svg" width="60" height="42" viewBox="0 0 60 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 14L1 11" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M8 22L2 23" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M52 11L58 8" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M54 18L59 19" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M49 26L55 29" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M12 30L16 12L24 22L31 6L37 22L45 12L49 30" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 30C24 33 37 33 49 30" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 35C27 37 36 37 44 35" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22 39C28 40.5 34 40.5 40 39" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
 
         <h1 class="hero__title">
-          Ход конём
-          <span class="hero__swoosh" aria-hidden="true"></span>
+          <span class="hero__title-line">Ход</span>
+          <span class="hero__title-line hero__title-line--second">конём</span>
+          <svg class="hero__swoosh" viewBox="0 0 260 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 13C45 18 135 20 255 4C175 14 75 16 3 13Z" fill="#f59e0b"/>
+          </svg>
         </h1>
 
         <p class="hero__subtitle">
@@ -116,7 +129,7 @@
                 <circle cx="16" cy="16" r="1.5" fill="#f59e0b"></circle>
               </svg>
             </div>
-            <span class="hero__feature-text">Огромный выбор игр</span>
+            <span class="hero__feature-text">Огромный<br>выбор игр</span>
           </div>
 
           <div class="hero__feature">
@@ -128,7 +141,7 @@
                 <circle cx="18.5" cy="18.5" r="2.5"></circle>
               </svg>
             </div>
-            <span class="hero__feature-text">Быстрая доставка</span>
+            <span class="hero__feature-text">Быстрая<br>доставка</span>
           </div>
 
           <div class="hero__feature">
@@ -138,7 +151,7 @@
                 <polyline points="9 12 11 14 15 10"></polyline>
               </svg>
             </div>
-            <span class="hero__feature-text">Гарантия качества</span>
+            <span class="hero__feature-text">Гарантия<br>качества</span>
           </div>
         </div>
       </div>
