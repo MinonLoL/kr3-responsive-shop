@@ -154,6 +154,25 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+/* Базовые стили доступности для форм и диалогов */
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  color: var(--color-text);
+}
+
+label {
+  color: #f5ede2;
+  font-weight: 600;
+}
+
+dialog {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
 /* ===============================
    4. Компоненты страницы
    =============================== */
@@ -871,15 +890,15 @@ textarea:focus-visible {
 .catalog-filters__group {
   margin: 0;
   padding: var(--space-md);
-  border: 1px solid var(--color-border-light);
+  border: 1px solid rgba(229, 169, 60, 0.2);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface-soft);
+  background-color: #1a130b;
 }
 
 .catalog-filters__legend {
   font-weight: 700;
   font-size: 14px;
-  color: var(--color-text);
+  color: #ffffff;
   padding: 0 4px;
 }
 
@@ -889,22 +908,31 @@ textarea:focus-visible {
   gap: var(--space-sm);
   margin-bottom: var(--space-xs);
   font-size: 14px;
+  color: #e5dccf;
   cursor: pointer;
+  transition: color var(--transition);
+}
+
+.catalog-filters__label:hover {
+  color: var(--color-primary);
 }
 
 .catalog-filters__input[type="number"] {
   width: 100%;
   padding: 9px 12px;
-  border: 1.5px solid var(--color-border);
+  border: 1.5px solid rgba(229, 169, 60, 0.35);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
+  background-color: #201710;
+  color: #ffffff;
   font: inherit;
   font-size: 14px;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), background-color var(--transition);
 }
 
 .catalog-filters__input[type="number"]:focus {
+  background-color: #291f16;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
   outline: none;
 }
 
@@ -933,15 +961,15 @@ textarea:focus-visible {
   gap: var(--space-md);
   margin-bottom: var(--space-md);
   padding: var(--space-sm) var(--space-md);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background-color: #17110a;
+  border: 1px solid rgba(229, 169, 60, 0.25);
   border-radius: var(--radius-sm);
 }
 
 .catalog-toolbar__count {
   margin: 0;
   font-size: 14px;
-  color: var(--color-muted);
+  color: #ded5c8;
 }
 
 .catalog-toolbar__sort {
@@ -949,21 +977,29 @@ textarea:focus-visible {
   align-items: center;
   gap: var(--space-sm);
   font-size: 14px;
+  color: #f5ede2;
 }
 
 .catalog-toolbar__select {
-  padding: 7px 12px;
-  border: 1.5px solid var(--color-border);
+  padding: 8px 14px;
+  border: 1.5px solid rgba(229, 169, 60, 0.35);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
+  background-color: #201710;
+  color: #ffffff;
   font: inherit;
   font-size: 14px;
   cursor: pointer;
   transition: border-color var(--transition);
 }
 
+.catalog-toolbar__select option {
+  background-color: #1a130c;
+  color: #fdfbf7;
+}
+
 .catalog-toolbar__select:focus {
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
   outline: none;
 }
 
@@ -985,17 +1021,30 @@ textarea:focus-visible {
    =============================== */
 
 .order-dialog {
-  width: min(100% - 32px, 560px);
-  padding: var(--space-xl);
-  border: 1px solid var(--color-border);
+  width: min(100% - 32px, 580px);
+  padding: clamp(20px, 4vw, 36px);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
   border-radius: var(--radius-lg);
-  background-color: var(--color-surface);
-  box-shadow: 0 20px 45px rgba(28, 25, 23, 0.25);
+  background-color: #17110a;
+  color: #fdfbf7;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.15);
 }
 
 .order-dialog::backdrop {
-  background-color: rgba(28, 25, 23, 0.65);
-  backdrop-filter: blur(4px);
+  background-color: rgba(10, 7, 5, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.order-dialog h2,
+#order-dialog-title {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 .order-form__field {
@@ -1005,8 +1054,10 @@ textarea:focus-visible {
 .order-form__label {
   display: block;
   margin-bottom: 6px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
+  color: #f5ede2;
+  letter-spacing: 0.01em;
 }
 
 .order-form__input,
@@ -1014,55 +1065,99 @@ textarea:focus-visible {
 .order-form__textarea {
   width: 100%;
   padding: 11px 14px;
-  border: 1.5px solid var(--color-border);
+  border: 1.5px solid rgba(229, 169, 60, 0.35);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: #201710;
+  color: #ffffff;
   font: inherit;
   font-size: 15px;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), background-color var(--transition), box-shadow var(--transition);
+}
+
+.order-form__input::placeholder,
+.order-form__textarea::placeholder {
+  color: #a39482;
+  opacity: 1;
 }
 
 .order-form__input--checkbox {
-  width: auto;
+  width: 20px;
+  height: 20px;
   accent-color: var(--color-primary);
+  margin: 0;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .order-form__hint {
   display: block;
   margin-top: 4px;
   font-size: 12px;
-  color: var(--color-muted);
+  color: #c4b5a2;
 }
 
 .order-form__input:hover,
 .order-form__select:hover,
 .order-form__textarea:hover {
-  border-color: rgba(245, 158, 11, 0.45);
+  border-color: rgba(245, 158, 11, 0.65);
+  background-color: #261d15;
 }
 
 .order-form__input:focus,
 .order-form__select:focus,
 .order-form__textarea:focus {
+  background-color: #291f16;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px var(--color-primary-glow);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+  color: #ffffff;
   outline: none;
+}
+
+/* Стилизация выпадающего списка select */
+.order-form__select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.order-form__select option {
+  background-color: #1a130c;
+  color: #fdfbf7;
+  padding: 8px;
+}
+
+/* Стилизация иконки календаря в input type="date" */
+.order-form__input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.85) sepia(100%) saturate(300%) hue-rotate(5deg);
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.order-form__input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  transform: scale(1.15);
+  opacity: 1;
 }
 
 .order-form__input[aria-invalid="true"],
 .order-form__select[aria-invalid="true"],
 .order-form__textarea[aria-invalid="true"] {
   border-color: var(--color-danger);
-  background-color: var(--color-danger-bg);
+  background-color: rgba(239, 68, 68, 0.18);
 }
 
 .order-form__actions {
   display: flex;
+  gap: 12px;
   margin-top: var(--space-lg);
 }
 
 .order-form__actions .button {
-  width: 100%;
+  flex: 1 1 0;
   padding: 13px 24px;
   font-size: 16px;
   font-weight: 700;
@@ -1465,33 +1560,52 @@ textarea:focus-visible {
   position: fixed;
   right: var(--space-lg);
   bottom: var(--space-lg);
-  z-index: 90;
+  z-index: 95;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 10px 18px;
-  color: var(--color-white);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border-radius: 50px;
-  font-weight: 600;
+  gap: 8px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px 20px;
+  color: #fdfbf7;
+  background: rgba(23, 17, 11, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 14px;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  box-shadow: 0 6px 18px var(--color-primary-glow);
-  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(245, 158, 11, 0.2);
+  transition: all var(--transition-smooth);
+  cursor: pointer;
 }
 
-.to-top::before {
-  content: "↑";
-  font-weight: 800;
+.to-top__icon {
+  display: inline-block;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: transform var(--transition), color var(--transition);
+}
+
+.to-top__text {
+  display: inline-block;
+  line-height: 1;
 }
 
 .to-top:hover {
-  color: var(--color-white);
+  color: #120d06;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-color: #f59e0b;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.8), 0 0 28px rgba(245, 158, 11, 0.65);
+}
+
+.to-top:hover .to-top__icon {
+  color: #120d06;
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(180, 52, 3, 0.4);
 }
 
 /* ===============================
