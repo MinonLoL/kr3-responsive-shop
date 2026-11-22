@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Форма оформления заявки в учебном интернет-магазине.">
-  <title>Оформление заявки — Учебный интернет-магазин</title>
+  <meta name="description" content="Оформление заявки на настольные игры в интернет-магазине «Ход конём». Быстрая доставка по Москве и всей России, бережная упаковка и удобная оплата.">
+  <title>Заявка на покупку — Ход конём</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="contacts.html">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">
+        <svg class="site-header__logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19 22H5v-2h14v2M17.5 12c-.3 0-.5-.2-.5-.5 0-1.1-.9-2-2-2-.3 0-.5-.2-.5-.5s.2-.5.5-.5c1.7 0 3 1.3 3 3 0 .3-.2.5-.5.5M19 17H5l1.2-4.8c.5-1.9 1.9-3.4 3.7-4l.6-1.2C10.8 6.4 11 5.7 11 5c0-.6.4-1 1-1h1c.6 0 1 .4 1 1 0 .7.2 1.4.5 2l.6 1.2c1.8.6 3.2 2.1 3.7 4L19 17z"/>
+        </svg>
+        <span class="site-header__logo-text">
+          <span class="site-header__brand">Ход конем</span>
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </span>
+      </a>
 
+      <!-- Главная навигация: 4 полные страницы без якорей -->
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -22,25 +43,36 @@
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">Карточка товара</a>
-          </li>
-          <li class="site-nav__item">
             <a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
           </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
         </ul>
       </nav>
+
+      <div class="site-header__actions">
+        <a class="header-action-icon" href="catalog.html" aria-label="Поиск по каталогу" title="Поиск">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <a class="header-action-icon" href="contacts.html" aria-label="Контакты и шоурум" title="Контакты и шоурум">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <a class="header-action-icon header-action-icon--cart" href="order.html" aria-label="Корзина: 0 товаров" title="Корзина">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="header-cart-badge" aria-hidden="true">0</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -52,65 +84,199 @@
 
     <section class="section">
       <h1>Оформление заявки</h1>
+      <p>
+        Заполните контактные данные для подтверждения доставки. Менеджер службы заботы свяжется с вами в течение 15 минут для подтверждения брони и удобного интервала приезда курьера.
+      </p>
 
-      <form class="order-form order-form--page" action="#" method="post">
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-name">Имя</label>
-          <input class="order-form__input" id="order-name" name="name" type="text"
-            placeholder="Введите ваше имя" minlength="2"
-            autocomplete="given-name" required>
-        </div>
+      <div class="order-checkout-layout">
+        <!-- Форма заказа -->
+        <form class="order-form order-form--page" action="#" method="post">
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-name">Имя покупателя</label>
+            <input class="order-form__input" id="order-name" name="name" type="text"
+              placeholder="Введите ваше имя" minlength="2"
+              autocomplete="given-name" required>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-email">E-mail</label>
-          <input class="order-form__input" id="order-email" name="email" type="email"
-            placeholder="example@mail.ru" autocomplete="email" required>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-email">Электронная почта (e-mail)</label>
+            <input class="order-form__input" id="order-email" name="email" type="email"
+              placeholder="example@mail.ru" autocomplete="email" required>
+            <small class="order-form__hint">На этот адрес отправим электронный чек и трек-номер посылки</small>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-phone">Телефон</label>
-          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
-            placeholder="+7 (900) 000-00-00"
-            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-          <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-phone">Номер телефона</label>
+            <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
+              placeholder="+7 (900) 000-00-00"
+              pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+            <small class="order-form__hint">Формат: +7 (900) 000-00-00 (курьер звонит за 1 час)</small>
+          </div>
 
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-topic">Тема заявки</label>
-          <select class="order-form__select" id="order-topic" name="topic" required>
-            <option value="">Выберите тему</option>
-            <option value="product">Заказ товара</option>
-            <option value="consultation">Консультация</option>
-            <option value="delivery">Доставка</option>
-          </select>
-        </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-topic">Тема заявки / Способ получения</label>
+            <select class="order-form__select" id="order-topic" name="topic" required>
+              <option value="">Выберите тему или способ получения</option>
+              <option value="product" selected>Покупка настольной игры с курьерской доставкой</option>
+              <option value="delivery">Самовывоз из шоурума (Москва, Дизайн-завод)</option>
+              <option value="consultation">Консультация гейм-мастера по подбору игр</option>
+            </select>
+          </div>
 
-        <div class="order-form__field order-form__field--wide">
-          <label class="order-form__label" for="order-comment">Комментарий</label>
-          <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
-            placeholder="Укажите дополнительную информацию"></textarea>
-        </div>
+          <div class="order-form__field order-form__field--wide">
+            <label class="order-form__label" for="order-comment">Адрес доставки и пожелания к заказу</label>
+            <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
+              placeholder="Укажите город, улицу, дом, квартиру/офис, удобный интервал времени или промокод"></textarea>
+          </div>
 
-        <div class="order-form__field order-form__field--checkbox">
-          <label>
-            <input class="order-form__input order-form__input--checkbox"
-              id="order-agreement" name="agreement" type="checkbox" required>
-            Я согласен на обработку данных
-          </label>
-        </div>
+          <div class="order-form__field order-form__field--checkbox">
+            <label>
+              <input class="order-form__input order-form__input--checkbox"
+                id="order-agreement" name="agreement" type="checkbox" required>
+              Я согласен на обработку персональных данных и подтверждаю ознакомление с правилами продажи
+            </label>
+          </div>
 
-        <div class="order-form__actions">
-          <button class="button button--primary" type="submit">Отправить заявку</button>
-        </div>
-      </form>
+          <div class="order-form__actions">
+            <button class="button button--primary" type="submit">Подтвердить заказ</button>
+          </div>
+        </form>
+
+        <!-- Сводка заказа интернет-магазина -->
+        <aside class="order-summary-box" aria-label="Содержимое заказа">
+          <h2 class="order-summary-box__title">Ваш заказ</h2>
+
+          <div class="order-summary-row">
+            <span><strong>Каркассон</strong> (Базовое издание) × 1</span>
+            <span>1 990 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Скидка по акции</span>
+            <span style="color: var(--color-success);">-500 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Промокод <code>KNIGHT2026</code> (-10%)</span>
+            <span style="color: var(--color-success);">-199 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Фирменные протекторы (в подарок)</span>
+            <span style="color: var(--color-success);">0 руб.</span>
+          </div>
+
+          <div class="order-summary-row">
+            <span>Доставка по Москве</span>
+            <span style="color: var(--color-success);">Бесплатно</span>
+          </div>
+
+          <div class="order-summary-row order-summary-row--total">
+            <span>Итого к оплате:</span>
+            <span>1 791 руб.</span>
+          </div>
+
+          <div style="margin-top: 20px; font-size: 13px; color: var(--color-muted); line-height: 1.6;">
+            <p>🛡️ <strong>Гарантия 100% оригинала:</strong> сертифицированное издание от официального издательства.</p>
+            <p>📦 <strong>Бронебойная упаковка:</strong> коробка приедет без малейших повреждений.</p>
+            <p>🔒 <strong>Безопасный расчёт:</strong> оплата курьеру или при получении картой/наличными после проверки.</p>
+          </div>
+        </aside>
+      </div>
     </section>
   </main>
 
+  <!-- Полноценный четырёхколоночный футер: телефон и почта ведут в контакты, графические иконки оплаты -->
   <footer class="site-footer">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="contacts.html">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="contacts.html">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Каталог товаров</a></li>
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="contacts.html">Контакты и шоурум</a></li>
+            <li><a href="contacts.html">Схема проезда на карте</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge" title="Платёжная система МИР">
+              <svg width="34" height="18" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+                <rect width="48" height="24" rx="4" fill="#0083ca"/>
+                <path d="M8 7h3.5l3 6.5 3-6.5h3.5v10h-3v-5.5l-2.5 5.5h-2L11 11.5V17H8V7z" fill="#ffffff"/>
+                <path d="M23 7h3v10h-3V7zm8 0h4.5c2.5 0 4 1.5 4 3.5s-1.5 3.5-4 3.5H34v3h-3V7zm3 4.5h1.5c.8 0 1.5-.4 1.5-1s-.7-1-1.5-1H34v2z" fill="#4bae4f"/>
+              </svg>
+              МИР
+            </span>
+            <span class="payment-badge" title="Система быстрых платежей">
+              <svg width="20" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 18l6-12 4 4-6 10-4-2z" fill="#0079C2"/>
+                <path d="M14 6l6 6-4 4-4-4 2-6z" fill="#FFCC00"/>
+                <path d="M8 20l4-2 6-8-2-2-8 12z" fill="#E41F26"/>
+              </svg>
+              СБП
+            </span>
+            <span class="payment-badge" title="Visa">
+              <svg width="34" height="18" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+                <rect width="48" height="24" rx="4" fill="#1434cb"/>
+                <path d="M16 17l2.5-10h2.5L18.5 17H16zm10.5-9.8c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7 1 .5 1.3.8 1.3 1.2 0 .7-.8 1-1.6 1-.9 0-1.5-.1-2.3-.5l-.3-.2-.3 1.9c.5.2 1.5.4 2.5.4 2.7 0 4.5-1.3 4.5-3.3 0-1.1-.7-2-2.2-2.7-.9-.5-1.5-.8-1.5-1.3 0-.4.5-.9 1.5-.9.8 0 1.4.2 1.8.4l.2.1.3-1.6zm6.8-.2h-2c-.6 0-1 .2-1.3.9L26 17h2.6l.5-1.5h3.2l.3 1.5h2.3l-2-10zm-2.5 6.6l1-2.8.6 2.8h-1.6zM13.7 7H11l-3.5 10h2.6l.5-1.5h.3c.3.5 1.2 1.5 2.8 1.5 2.4 0 4.3-2 4.3-5 0-3.3-2.1-5-4.3-5z" fill="#ffffff"/>
+              </svg>
+              Visa
+            </span>
+            <span class="payment-badge" title="MasterCard">
+              <svg width="28" height="18" viewBox="0 0 36 24" fill="none" aria-hidden="true">
+                <rect width="36" height="24" rx="4" fill="#252525"/>
+                <circle cx="14" cy="12" r="7" fill="#eb001b"/>
+                <circle cx="22" cy="12" r="7" fill="#f79e1b" fill-opacity="0.9"/>
+              </svg>
+              MasterCard
+            </span>
+            <span class="payment-badge" title="Оплата при получении курьеру">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+              При получении
+            </span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
-  <a class="to-top" href="#top">Наверх</a>
+  <a class="to-top" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Наверх</a>
 </body>
 </html>

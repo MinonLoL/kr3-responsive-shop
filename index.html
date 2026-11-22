@@ -3,21 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Учебный интернет-магазин</title>
-  <meta name="description" content="Учебный frontend-проект интернет-магазина.">
+  <title>Ход конём — интернет-магазин настольных игр в Москве и по РФ</title>
+  <meta name="description" content="Интернет-магазин настольных игр «Ход конём»: свыше 500 оригинальных настолок для семейных вечеров, вечеринок и тактических баталий. Экспресс-доставка, клуб игротек и гарантия качества.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://MinonLoL.github.io/kr1-html-css-shop/images/preview.jpg">
+  <meta property="og:title" content="Ход конём — интернет-магазин настольных игр">
+  <meta property="og:description" content="Широкий выбор оригинальных настольных игр: мировые хиты, свежие новинки, аксессуары и клуб игротек в Москве.">
+  <meta property="og:image" content="https://MinonLoL.github.io/kr3-responsive-shop/images/preview.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- Информационная полоса магазина -->
+  <aside class="top-announcement" aria-label="Специальные предложения и доставка">
+    <div class="top-announcement__inner">
+      <span>🎲 Бесплатная доставка заказов от 3500 ₽ | Отправка по всей РФ</span>
+      <span class="top-announcement__promo">Скидка 10% на первый заказ по промокоду <strong>KNIGHT2026</strong></span>
+      <a class="top-announcement__phone" href="contacts.html">+7 (495) 777-45-20</a>
+    </div>
+  </aside>
+
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">
+        <svg class="site-header__logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19 22H5v-2h14v2M17.5 12c-.3 0-.5-.2-.5-.5 0-1.1-.9-2-2-2-.3 0-.5-.2-.5-.5s.2-.5.5-.5c1.7 0 3 1.3 3 3 0 .3-.2.5-.5.5M19 17H5l1.2-4.8c.5-1.9 1.9-3.4 3.7-4l.6-1.2C10.8 6.4 11 5.7 11 5c0-.6.4-1 1-1h1c.6 0 1 .4 1 1 0 .7.2 1.4.5 2l.6 1.2c1.8.6 3.2 2.1 3.7 4L19 17z"/>
+        </svg>
+        <span class="site-header__logo-text">
+          <span class="site-header__brand">Ход конем</span>
+          <span class="site-header__tagline">Магазин настольных игр</span>
+        </span>
+      </a>
 
+      <!-- Главная навигация: 4 полные страницы без якорей -->
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -27,137 +48,320 @@
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">Карточка товара</a>
-          </li>
-          <li class="site-nav__item">
             <a class="site-nav__link" href="order.html">Заявка</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
           </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#faq">Частые вопросы</a>
-          </li>
         </ul>
       </nav>
+
+      <div class="site-header__actions">
+        <a class="header-action-icon" href="catalog.html" aria-label="Поиск по каталогу" title="Поиск">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <a class="header-action-icon" href="contacts.html" aria-label="Контакты и шоурум" title="Контакты и шоурум">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <a class="header-action-icon header-action-icon--cart" href="order.html" aria-label="Корзина: 0 товаров" title="Корзина">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="header-cart-badge" aria-hidden="true">0</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
+    <!-- Главный баннер (Hero) в стиле макета «Ход конём» -->
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">Учебный интернет-магазин</h1>
-        <p>
-          Это стартовая страница учебного frontend-проекта.
-          В рамках практической работы №12 реализована адаптивная вёрстка под экраны от 360px до 1440px+
-          с использованием подхода Mobile First.
+        <div class="hero__badge" aria-hidden="true">
+          <svg class="hero__crown-svg" width="60" height="42" viewBox="0 0 60 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 14L1 11" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M8 22L2 23" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M52 11L58 8" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M54 18L59 19" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M49 26L55 29" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M12 30L16 12L24 22L31 6L37 22L45 12L49 30" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 30C24 33 37 33 49 30" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 35C27 37 36 37 44 35" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22 39C28 40.5 34 40.5 40 39" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line">Ход</span>
+          <span class="hero__title-line hero__title-line--second">конём</span>
+          <svg class="hero__swoosh" viewBox="0 0 260 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 13C45 18 135 20 255 4C175 14 75 16 3 13Z" fill="#f59e0b"/>
+          </svg>
+        </h1>
+
+        <p class="hero__subtitle">
+          Настольные игры для больших и маленьких побед!
         </p>
-        <a class="button button--primary" href="#popular">Перейти к товарам</a>
+
+        <div class="hero__actions">
+          <a class="button button--primary hero__cta-btn" href="catalog.html">
+            Перейти в каталог <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hero__features" aria-label="Преимущества магазина">
+          <div class="hero__feature">
+            <div class="hero__feature-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                <circle cx="8" cy="8" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="16" cy="8" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="12" cy="12" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="8" cy="16" r="1.5" fill="#f59e0b"></circle>
+                <circle cx="16" cy="16" r="1.5" fill="#f59e0b"></circle>
+              </svg>
+            </div>
+            <span class="hero__feature-text">Огромный<br>выбор игр</span>
+          </div>
+
+          <div class="hero__feature">
+            <div class="hero__feature-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <span class="hero__feature-text">Быстрая<br>доставка</span>
+          </div>
+
+          <div class="hero__feature">
+            <div class="hero__feature-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <span class="hero__feature-text">Гарантия<br>качества</span>
+          </div>
+        </div>
       </div>
+
       <picture class="hero__picture">
         <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg">
         <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg">
         <img
           src="images/hero-mobile.jpg"
-          alt="Каталог учебных товаров"
-          width="640"
-          height="360"
+          alt="Резной деревянный шахматный конь в золотой короне, кубики и настольные игры"
+          width="600"
+          height="450"
           class="hero__image"
         >
       </picture>
     </section>
 
+    <!-- Быстрый выбор популярных категорий -->
+    <section class="section category-chips-section" aria-label="Быстрый выбор категорий">
+      <h2 class="section__title">Популярные категории</h2>
+      <div class="category-chips">
+        <a class="category-chip" href="catalog.html">🏰 Семейные стратегии</a>
+        <a class="category-chip" href="catalog.html">🎭 Для вечеринок и компаний</a>
+        <a class="category-chip" href="catalog.html">⚔️ Тактические дуэли</a>
+        <a class="category-chip" href="catalog.html">🚀 Научная фантастика</a>
+        <a class="category-chip" href="catalog.html">🃏 Карточные и филлеры</a>
+        <a class="category-chip" href="catalog.html">🧩 Кооперативные квесты</a>
+        <a class="category-chip" href="catalog.html">👶 Детские и развивающие</a>
+      </div>
+    </section>
+
+    <!-- Преимущества магазина -->
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества проекта</h2>
+      <h2 class="section__title">Преимущества магазина</h2>
       <ul class="advantages-list">
-        <li>понятная HTML-структура и Mobile First архитектура;</li>
-        <li>семантические блоки страницы и доступность (a11y);</li>
-        <li>подключение внешних адаптивных CSS-стилей (responsive.css);</li>
-        <li>адаптивные изображения с picture, srcset и sizes.</li>
+        <li>более 500 популярных и редких настольных изданий в наличии;</li>
+        <li>только оригинальные сертифицированные коробки от официальных издателей;</li>
+        <li>быстрая курьерская доставка по городу и отправка по всей России;</li>
+        <li>бесплатные консультации гейм-мастеров по подбору игр.</li>
       </ul>
     </section>
 
+    <!-- Популярные товары -->
     <section class="section" id="popular">
       <h2 class="section__title">Популярные товары</h2>
 
       <div class="products-grid">
-        <article class="product-card">
-          <img
-            src="images/product-1-640.jpg"
-            srcset="images/product-1-480.jpg 480w,
-                    images/product-1-640.jpg 640w,
-                    images/product-1-960.jpg 960w"
-            sizes="(max-width: 639px) 100vw,
-                   (max-width: 1023px) 50vw,
-                   33vw"
-            alt="Учебный товар 1: базовая модель"
-            width="640"
-            height="480"
-            loading="lazy"
-            class="product-card__image"
-          >
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge">Скидка</span>
+          <a href="product.html" class="product-card__image-link" aria-label="Карточка товара: Каркассон">
+            <img
+              src="images/product-1.jpg"
+              alt="Настольная игра Каркассон"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+          </a>
+          <h3 class="product-card__title">
+            <a href="product.html">Каркассон</a>
+          </h3>
+          <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 48 отзывов</p>
+          <p class="product-card__description">Легендарная семейная стратегия о строительстве средневековых замков, дорог и монастырей.</p>
+          <ul class="product-card__features">
+            <li>👥 2–5 игроков</li>
+            <li>🎂 от 7 лет</li>
+            <li>⏱️ 35–45 мин</li>
+          </ul>
+          <p class="product-card__stock product-card__stock--in">В наличии (14 шт.)</p>
+          <p class="product-card__price">1990 руб.<s class="product-card__old-price">2490 руб.</s></p>
+          <button class="button button--primary product-card__button" type="button" data-product="Каркассон">
             Заказать
           </button>
         </article>
 
         <article class="product-card">
-          <img
-            src="images/product-1-640.jpg"
-            srcset="images/product-1-480.jpg 480w,
-                    images/product-1-640.jpg 640w,
-                    images/product-1-960.jpg 960w"
-            sizes="(max-width: 639px) 100vw,
-                   (max-width: 1023px) 50vw,
-                   33vw"
-            alt="Учебный товар 2: популярная модель"
-            width="640"
-            height="480"
-            loading="lazy"
-            class="product-card__image"
-          >
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
+          <a href="product.html" class="product-card__image-link" aria-label="Карточка товара: Колонизаторы">
+            <img
+              src="images/product-2.jpg"
+              alt="Настольная игра Колонизаторы"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+          </a>
+          <h3 class="product-card__title">
+            <a href="product.html">Колонизаторы</a>
+          </h3>
+          <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.8 · 36 отзывов</p>
+          <p class="product-card__description">Мировой бестселлер об освоении острова, торговле ресурсами и развитии поселений.</p>
+          <ul class="product-card__features">
+            <li>👥 3–4 игрока</li>
+            <li>🎂 от 10 лет</li>
+            <li>⏱️ 60–90 мин</li>
+          </ul>
+          <p class="product-card__stock product-card__stock--in">В наличии (8 шт.)</p>
+          <p class="product-card__price">3490 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Колонизаторы">
             Заказать
           </button>
         </article>
 
-        <article class="product-card">
-          <img
-            src="images/product-1-640.jpg"
-            srcset="images/product-1-480.jpg 480w,
-                    images/product-1-640.jpg 640w,
-                    images/product-1-960.jpg 960w"
-            sizes="(max-width: 639px) 100vw,
-                   (max-width: 1023px) 50vw,
-                   33vw"
-            alt="Учебный товар 3: премиум вариант"
-            width="640"
-            height="480"
-            loading="lazy"
-            class="product-card__image"
-          >
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
+        <article class="product-card product-card--new">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <a href="product.html" class="product-card__image-link" aria-label="Карточка товара: Покорение Марса">
+            <img
+              src="images/product-3.jpg"
+              alt="Настольная игра Покорение Марса"
+              width="640"
+              height="480"
+              loading="lazy"
+              class="product-card__image"
+            >
+          </a>
+          <h3 class="product-card__title">
+            <a href="product.html">Покорение Марса</a>
+          </h3>
+          <p class="product-card__rating"><span role="img" aria-label="Оценка 5 из 5">★★★★★</span> 4.9 · 28 отзывов</p>
+          <p class="product-card__description">Глубокая научно-фантастическая стратегия об управлении корпорациями и терраформировании планеты.</p>
+          <ul class="product-card__features">
+            <li>👥 1–5 игроков</li>
+            <li>🎂 от 12 лет</li>
+            <li>⏱️ 90–120 мин</li>
+          </ul>
+          <p class="product-card__stock product-card__stock--order">Под заказ (доставка 2 дня)</p>
+          <p class="product-card__price">4990 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Покорение Марса">
             Заказать
           </button>
         </article>
       </div>
     </section>
 
+    <!-- Спецпредложение недели -->
+    <section class="section promo-banner">
+      <div class="promo-banner__content">
+        <span class="promo-banner__badge">Хит сезона со скидкой</span>
+        <h2 class="promo-banner__title">Каркассон. Королевский подарок</h2>
+        <p class="promo-banner__text">
+          Большой подарочный набор: базовая игра и 4 официальных расширения («Таверны и соборы», «Купцы и зодчие», «Аббат», «Река») в одной коробке.
+          Идеальный выбор для подарка и тёплых семейных вечеров.
+        </p>
+        <div class="promo-banner__price">
+          <span class="promo-banner__current-price">3 990 руб.</span>
+          <s class="promo-banner__old-price">4 990 руб.</s>
+          <span class="promo-banner__discount">Экономия 1000 ₽ (-20%)</span>
+        </div>
+        <div class="promo-banner__actions">
+          <a class="button button--primary" href="order.html">Оформить заказ</a>
+          <a class="button button--secondary" href="product.html">Подробнее об игре</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Гарантии и безопасность -->
+    <section class="section trust-section" aria-label="Гарантии магазина">
+      <h2 class="section__title">Почему выбирают «Ход конём»</h2>
+      <div class="trust-grid">
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">🛡️</div>
+          <h3 class="trust-card__title">100% Оригиналы</h3>
+          <p class="trust-card__desc">Сотрудничаем напрямую с официальными издательствами Hobby World, GaGa Games, Crowd Games и Лавка Игр.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">📦</div>
+          <h3 class="trust-card__title">Бронебойная упаковка</h3>
+          <p class="trust-card__desc">Упаковываем каждую коробку в 3 слоя воздушно-пузырьковой плёнки с защитными картонными уголками.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">⚡</div>
+          <h3 class="trust-card__title">Быстрая доставка</h3>
+          <p class="trust-card__desc">Курьером в день заказа по Москве. Доставка СДЭК, Boxberry и Почтой России во все регионы за 1–3 дня.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-card__icon" aria-hidden="true">🎲</div>
+          <h3 class="trust-card__title">Клуб и игротеки</h3>
+          <p class="trust-card__desc">Большая игротека в шоуруме на Дмитровской. Приходите пробовать новинки перед покупкой бесплатно.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Отзывы покупателей -->
+    <section class="section reviews" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+      <p class="reviews__summary">Средняя оценка магазина: 4.9 из 5 на основе 480 проверенных отзывов.</p>
+
+      <div class="reviews__list">
+        <article class="review-card">
+          <p class="review-card__text">«Превосходный магазин! Заказывал Каркассон и Колонизаторов: коробки упакованы идеально, уголки целые, доставка по Москве на следующий день.»</p>
+          <p class="review-card__author">Константин Смирнов, г. Москва</p>
+          <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
+        </article>
+
+        <article class="review-card">
+          <p class="review-card__text">«Ребята из клуба помогли разобраться в правилах "Покорения Марса", после чего сразу взяли коробку домой. Спасибо за экспертность и тёплую атмосферу!»</p>
+          <p class="review-card__author">Елена и Дмитрий, г. Мытищи</p>
+          <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
+        </article>
+
+        <article class="review-card">
+          <p class="review-card__text">«Очень удобный каталог с реальными фильтрами. Отправили СДЭКом в Екатеринбург за 2 дня. Однозначно лучший профильный магазин настолок.»</p>
+          <p class="review-card__author">Артём Васильев, г. Екатеринбург</p>
+          <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Частые вопросы (FAQ) -->
     <section class="section faq" id="faq">
       <h2 class="section__title">Частые вопросы</h2>
 
@@ -254,23 +458,125 @@
       </details>
     </section>
 
+    <!-- Клуб игротек -->
     <aside class="aside-info">
-      <h2>Информация для студентов</h2>
+      <h2>Клуб настольных игр и игротеки</h2>
       <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
+        Каждые выходные в нашем шоуруме проходят открытые игротеки.
+        Приходите знакомиться с новинками, изучать правила с опытными мастерами
+        и находить компанию для увлекательных партий.
       </p>
     </aside>
+
+    <!-- Подписка на закрытый клуб скидок -->
+    <section class="section newsletter-section">
+      <div class="newsletter-card">
+        <div class="newsletter-card__content">
+          <h2 class="newsletter-card__title">Вступайте в клуб настольщиков «Ход конём»</h2>
+          <p class="newsletter-card__text">Получите 500 бонусных баллов на первый заказ, закрытые распродажи и анонсы бесплатных игротек.</p>
+        </div>
+        <form class="newsletter-card__form" action="#" method="post" onsubmit="event.preventDefault(); alert('Спасибо за подписку! Промокод KNIGHT2026 активирован.');">
+          <input class="newsletter-card__input" type="email" placeholder="Ваш e-mail для скидки" required>
+          <button class="button button--primary" type="submit">Получить 500 ₽</button>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer" id="contacts">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <!-- Полноценный четырёхколоночный футер: телефон и почта ведут в контакты, графические иконки оплаты -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <p class="site-footer__brand">♞ Ход конём</p>
+          <p class="site-footer__tagline">Флагманский магазин настольных игр и клуб любителей настолок в Москве.</p>
+          <p class="site-footer__info">
+            📍 г. Москва, ул. Большая Новодмитровская, 36, стр. 2<br>
+            🕒 Ежедневно с 10:00 до 22:00<br>
+            📞 <a href="contacts.html">+7 (495) 777-45-20</a><br>
+            ✉️ <a href="contacts.html">info@hod-konem.ru</a>
+          </p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Каталог игр</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Семейные стратегии</a></li>
+            <li><a href="catalog.html">Игры для вечеринок</a></li>
+            <li><a href="catalog.html">Карточные игры и филлеры</a></li>
+            <li><a href="catalog.html">Сложные стратегии</a></li>
+            <li><a href="catalog.html">Детские настольные игры</a></li>
+            <li><a href="catalog.html">Новинки и предзаказы</a></li>
+            <li><a href="catalog.html">Акции и скидки</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Покупателям</h3>
+          <ul class="site-footer__links">
+            <li><a href="catalog.html">Каталог товаров</a></li>
+            <li><a href="order.html">Оформление заявки</a></li>
+            <li><a href="contacts.html">Контакты и шоурум</a></li>
+            <li><a href="contacts.html">Схема проезда на карте</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__title">Безопасная оплата</h3>
+          <p class="site-footer__desc">Принимаем все популярные и безопасные способы расчётов без комиссии:</p>
+          <div class="payment-badges" aria-label="Способы оплаты">
+            <span class="payment-badge" title="Платёжная система МИР">
+              <svg width="34" height="18" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+                <rect width="48" height="24" rx="4" fill="#0083ca"/>
+                <path d="M8 7h3.5l3 6.5 3-6.5h3.5v10h-3v-5.5l-2.5 5.5h-2L11 11.5V17H8V7z" fill="#ffffff"/>
+                <path d="M23 7h3v10h-3V7zm8 0h4.5c2.5 0 4 1.5 4 3.5s-1.5 3.5-4 3.5H34v3h-3V7zm3 4.5h1.5c.8 0 1.5-.4 1.5-1s-.7-1-1.5-1H34v2z" fill="#4bae4f"/>
+              </svg>
+              МИР
+            </span>
+            <span class="payment-badge" title="Система быстрых платежей">
+              <svg width="20" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 18l6-12 4 4-6 10-4-2z" fill="#0079C2"/>
+                <path d="M14 6l6 6-4 4-4-4 2-6z" fill="#FFCC00"/>
+                <path d="M8 20l4-2 6-8-2-2-8 12z" fill="#E41F26"/>
+              </svg>
+              СБП
+            </span>
+            <span class="payment-badge" title="Visa">
+              <svg width="34" height="18" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+                <rect width="48" height="24" rx="4" fill="#1434cb"/>
+                <path d="M16 17l2.5-10h2.5L18.5 17H16zm10.5-9.8c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7 1 .5 1.3.8 1.3 1.2 0 .7-.8 1-1.6 1-.9 0-1.5-.1-2.3-.5l-.3-.2-.3 1.9c.5.2 1.5.4 2.5.4 2.7 0 4.5-1.3 4.5-3.3 0-1.1-.7-2-2.2-2.7-.9-.5-1.5-.8-1.5-1.3 0-.4.5-.9 1.5-.9.8 0 1.4.2 1.8.4l.2.1.3-1.6zm6.8-.2h-2c-.6 0-1 .2-1.3.9L26 17h2.6l.5-1.5h3.2l.3 1.5h2.3l-2-10zm-2.5 6.6l1-2.8.6 2.8h-1.6zM13.7 7H11l-3.5 10h2.6l.5-1.5h.3c.3.5 1.2 1.5 2.8 1.5 2.4 0 4.3-2 4.3-5 0-3.3-2.1-5-4.3-5z" fill="#ffffff"/>
+              </svg>
+              Visa
+            </span>
+            <span class="payment-badge" title="MasterCard">
+              <svg width="28" height="18" viewBox="0 0 36 24" fill="none" aria-hidden="true">
+                <rect width="36" height="24" rx="4" fill="#252525"/>
+                <circle cx="14" cy="12" r="7" fill="#eb001b"/>
+                <circle cx="22" cy="12" r="7" fill="#f79e1b" fill-opacity="0.9"/>
+              </svg>
+              MasterCard
+            </span>
+            <span class="payment-badge" title="Оплата при получении курьеру">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+              При получении
+            </span>
+          </div>
+          <p class="site-footer__security">🔒 256-bit SSL шифрование данных</p>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Ход конём. Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+      </div>
+    </div>
   </footer>
 
+  <!-- Модальное окно оформления заказа -->
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 id="order-dialog-title">Оформление заявки</h2>
+    <h2 id="order-dialog-title">Оформление заказа</h2>
 
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
@@ -305,16 +611,16 @@
         <label class="order-form__label" for="order-topic">Тема заявки</label>
         <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
+          <option value="product">Покупка настольной игры</option>
+          <option value="consultation">Консультация по выбору игры</option>
+          <option value="delivery">Вопрос по доставке и самовывозу</option>
         </select>
       </div>
 
       <div class="order-form__field order-form__field--wide">
         <label class="order-form__label" for="order-comment">Комментарий</label>
         <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
-          placeholder="Укажите дополнительную информацию"></textarea>
+          placeholder="Укажите адрес доставки, удобное время или пожелания к заказу"></textarea>
       </div>
 
       <div class="order-form__field order-form__field--checkbox">
@@ -327,15 +633,15 @@
 
       <div class="order-form__actions">
         <button class="button button--secondary" type="button" id="close-order-dialog" aria-label="Закрыть окно оформления заявки">Закрыть</button>
-        <button class="button button--primary" type="submit">Отправить заявку</button>
+        <button class="button button--primary" type="submit">Подтвердить заказ</button>
       </div>
     </form>
   </dialog>
 
   <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
+    Заказ успешно оформлен! Мы свяжемся с вами в течение 15 минут.
   </p>
 
-  <a class="to-top" href="#top">Наверх</a>
+  <a class="to-top" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Наверх</a>
 </body>
 </html>
