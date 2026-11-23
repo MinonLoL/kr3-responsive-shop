@@ -1663,7 +1663,8 @@ dialog {
   display: inline-block;
   flex-shrink: 0;
   color: var(--color-primary);
-  transition: transform var(--transition), color var(--transition);
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.45));
+  transition: transform var(--transition-smooth), color var(--transition), filter var(--transition);
 }
 
 .to-top__text {
@@ -1681,6 +1682,7 @@ dialog {
 
 .to-top:hover .to-top__icon {
   color: #120d06;
+  filter: none;
   transform: translateY(-3px);
 }
 
