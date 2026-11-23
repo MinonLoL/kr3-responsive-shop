@@ -2118,18 +2118,41 @@ dialog {
 }
 
 .newsletter-card__input {
-  flex: 1 1 200px;
-  padding: 10px 14px;
-  border: 1.5px solid var(--color-border);
+  flex: 1 1 220px;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1.5px solid rgba(229, 169, 60, 0.35);
   border-radius: var(--radius-sm);
-  background-color: #ffffff;
+  background-color: #201710;
+  color: #ffffff;
   font: inherit;
-  font-size: 14px;
+  font-size: 15px;
+  transition: border-color var(--transition), background-color var(--transition), box-shadow var(--transition);
+}
+
+.newsletter-card__input::placeholder {
+  color: #a39482;
+  opacity: 1;
+}
+
+.newsletter-card__input:hover {
+  background-color: #261d15;
+  border-color: rgba(245, 158, 11, 0.65);
 }
 
 .newsletter-card__input:focus {
+  background-color: #291f16;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+  color: #ffffff;
   outline: none;
+}
+
+.newsletter-card__form .button {
+  min-height: 44px;
+  padding: 11px 22px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 /* Четырёхколоночный футер реального магазина */
