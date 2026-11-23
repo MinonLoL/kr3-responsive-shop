@@ -97,6 +97,12 @@
         <p class="product__category">Категория: семейные стратегии · Артикул: HK-0101 · Издатель: Мир Хобби</p>
         <h1 class="product__title">Каркассон</h1>
 
+        <ul class="product-card__features" aria-label="Параметры настольной игры">
+          <li><svg class="product-card__feature-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 2–5 игроков</li>
+          <li><svg class="product-card__feature-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="4" ry="4"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg> от 7 лет</li>
+          <li><svg class="product-card__feature-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> 35–45 мин</li>
+        </ul>
+
         <p class="product__rating">
           <span role="img" aria-label="Оценка 5 из 5">★★★★★</span>
           4.9 · 48 проверенных отзывов покупателей
@@ -127,8 +133,14 @@
         </fieldset>
 
         <div class="product__buy">
-          <label for="quantity">Количество</label>
-          <input class="product__quantity" id="quantity" name="quantity" type="number" min="1" max="14" value="1">
+          <div class="product__quantity-wrapper">
+            <label class="product__quantity-label" for="quantity">Количество</label>
+            <div class="stepper" role="group" aria-label="Выбор количества товара">
+              <button type="button" class="stepper__btn stepper__btn--decrease" aria-label="Уменьшить количество" onclick="const q = document.getElementById('quantity'); if (parseInt(q.value) > parseInt(q.min || 1)) { q.value = parseInt(q.value) - 1; }">−</button>
+              <input class="stepper__input" id="quantity" name="quantity" type="number" min="1" max="14" value="1" readonly>
+              <button type="button" class="stepper__btn stepper__btn--increase" aria-label="Увеличить количество" onclick="const q = document.getElementById('quantity'); if (parseInt(q.value) < parseInt(q.max || 14)) { q.value = parseInt(q.value) + 1; }">+</button>
+            </div>
+          </div>
           <a class="button button--primary" href="order.html">Оформить заявку</a>
           <a class="button button--secondary" href="catalog.html">← В каталог</a>
         </div>

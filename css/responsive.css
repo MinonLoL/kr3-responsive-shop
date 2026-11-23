@@ -369,17 +369,23 @@ main {
 .product__buy {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   align-items: stretch;
+}
+
+.product__quantity-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
 }
 
 .product__buy .button {
   min-height: 44px;
 }
 
-.product__quantity {
-  min-height: 44px;
-  width: 100%;
+.stepper {
+  width: fit-content;
 }
 
 .product-info-list {
@@ -391,11 +397,12 @@ main {
 @media (min-width: 640px) {
   .product__buy {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
+    gap: 16px;
   }
 
-  .product__quantity {
-    width: 90px;
+  .product__quantity-wrapper {
+    width: auto;
   }
 
   .product-info-list {
