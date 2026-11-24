@@ -765,3 +765,29 @@ main {
     grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   }
 }
+
+/* ==========================================================================
+   12. Адаптивность новых компонентов
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .profile-dialog__user-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .profile-dialog__avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .delivery-calc__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-calc__addon-label {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}

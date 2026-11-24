@@ -263,6 +263,11 @@ dialog {
   color: #d6cbbe;
   border-radius: 50%;
   text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
   transition: all var(--transition);
 }
 
@@ -2403,3 +2408,571 @@ dialog {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+/* ==========================================================================
+   11. Новые интерактивные компоненты (5 фич)
+   ========================================================================== */
+
+/* --- 1. Избранное (Wishlist) --- */
+.product-card__favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: rgba(22, 16, 10, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(229, 169, 60, 0.3);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.product-card__favorite:hover {
+  transform: scale(1.14);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(38, 28, 18, 0.95);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+.product-card__favorite:active {
+  transform: scale(0.92);
+}
+
+.product-card__favorite--active {
+  color: #f59e0b;
+  border-color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.15);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+}
+
+.product-card__favorite--active svg {
+  fill: #f59e0b;
+  stroke: #f59e0b;
+  animation: heartPulse 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+.header-wishlist-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #120d06;
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  transition: transform var(--transition);
+}
+
+/* --- 2. Личный кабинет (Profile Modal) --- */
+.profile-dialog {
+  width: min(100% - 32px, 540px);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-lg);
+  background-color: #17110a;
+  color: #fdfbf7;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.2);
+}
+
+.profile-dialog::backdrop {
+  background-color: rgba(10, 7, 5, 0.84);
+  backdrop-filter: blur(6px);
+}
+
+.profile-dialog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+  margin-bottom: 20px;
+}
+
+.profile-dialog__user-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-dialog__avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a1f15, #1d150e);
+  border: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+}
+
+.profile-dialog__name {
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.profile-dialog__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #120d06;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.profile-dialog__close {
+  background: transparent;
+  border: none;
+  color: var(--color-muted);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+}
+
+.profile-dialog__close:hover {
+  color: #ffffff;
+}
+
+.profile-dialog__stat-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-stat-item {
+  padding: 12px;
+  background-color: #201710;
+  border: 1px solid rgba(229, 169, 60, 0.25);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.profile-stat-item__value {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.profile-stat-item__label {
+  font-size: 12px;
+  color: #c4b5a2;
+  margin-top: 2px;
+}
+
+.profile-dialog__section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f5ede2;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-order-card {
+  padding: 14px;
+  background-color: #201710;
+  border: 1px solid rgba(229, 169, 60, 0.25);
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.profile-order-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.profile-order-card__id {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.profile-order-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.profile-order-card__status::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+}
+
+.profile-order-card__details {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.profile-dialog__footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* --- 3. Калькулятор доставки и опций (Delivery Calc) --- */
+.delivery-calc {
+  margin: var(--space-md) 0;
+  padding: 16px;
+  background-color: #1a130b;
+  border: 1px solid rgba(229, 169, 60, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.delivery-calc__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delivery-calc__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.delivery-calc__option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #201710;
+  border: 1.5px solid rgba(229, 169, 60, 0.25);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.delivery-calc__option:hover {
+  background-color: #261d15;
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+.delivery-calc__option input[type="radio"] {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  accent-color: var(--color-primary);
+  margin: 0;
+}
+
+.delivery-calc__option--active,
+.delivery-calc__option:has(input:checked) {
+  background-color: #2a1e14;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
+}
+
+.delivery-calc__option-name {
+  font-weight: 700;
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.delivery-calc__option-desc {
+  font-size: 11px;
+  color: var(--color-muted);
+  line-height: 1.3;
+}
+
+.delivery-calc__option-price {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--color-primary);
+  margin-top: 8px;
+}
+
+.delivery-calc__addons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(229, 169, 60, 0.15);
+}
+
+.delivery-calc__addon-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #201710;
+  border: 1px solid rgba(229, 169, 60, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: #f5ede2;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.delivery-calc__addon-label:hover {
+  background-color: #261d15;
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+.delivery-calc__addon-label input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  margin-right: 10px;
+  width: 17px;
+  height: 17px;
+}
+
+.delivery-calc__addon-price {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-left: auto;
+}
+
+.delivery-calc__summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+.delivery-calc__summary-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.delivery-calc__summary-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- 4. Ползунок цены (Price Range Slider) --- */
+.catalog-filters__slider-wrap {
+  margin-top: var(--space-sm);
+}
+
+.catalog-filters__range-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.catalog-filters__range-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-primary);
+  background-color: #201710;
+  border: 1px solid rgba(229, 169, 60, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.catalog-filters__range-slider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #201710;
+  border-radius: var(--radius-full);
+  outline: none;
+  margin: 10px 0;
+  border: 1px solid rgba(229, 169, 60, 0.25);
+}
+
+.catalog-filters__range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+  transition: transform var(--transition);
+}
+
+.catalog-filters__range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.catalog-filters__range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+  transition: transform var(--transition);
+}
+
+.catalog-filters__range-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* --- 5. Интерактивные звёздочки и форма отзыва --- */
+.review-form-card {
+  padding: clamp(16px, 3vw, 24px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-form-card__title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.star-rating__star {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  font-size: 22px;
+  color: #574637;
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.star-rating__star--active,
+.star-rating__star:hover {
+  color: var(--color-accent-gold);
+}
+
+.star-rating__star:hover {
+  transform: scale(1.2);
+}
+
+.star-rating__hint {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f5ede2;
+  margin-left: 8px;
+}
+
+.review-card--new {
+  animation: reviewFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+@keyframes reviewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Всплывающее уведомление (Toast) */
+.shop-toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #1a130b;
+  color: #fdfbf7;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(245, 158, 11, 0.25);
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.shop-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .shop-toast {
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
