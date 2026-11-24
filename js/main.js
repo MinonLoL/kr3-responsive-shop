@@ -242,12 +242,38 @@
     }
   }
 
-  // --- 6. Инициализация при загрузке страницы ---
+  // --- 6. Кнопка «Наверх» с плавным появлением при скролле ---
+  function initToTopButton() {
+    const toTopBtn = document.querySelector('.to-top, .back-to-top');
+    if (!toTopBtn) return;
+
+    let ticking = false;
+    function updateToTop() {
+      if (window.scrollY > 280) {
+        toTopBtn.classList.add('to-top--visible');
+      } else {
+        toTopBtn.classList.remove('to-top--visible');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateToTop);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    updateToTop();
+  }
+
+  // --- 7. Инициализация при загрузке страницы ---
   function init() {
     updateWishlistUI();
     initProfileDialog();
     initWishlistListeners();
     initOrderDialog();
+    initToTopButton();
   }
 
   if (document.readyState === 'loading') {

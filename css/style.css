@@ -1640,7 +1640,7 @@ dialog {
 .to-top {
   position: fixed;
   right: var(--space-lg);
-  bottom: var(--space-lg);
+  bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
   z-index: 95;
   display: inline-flex;
   align-items: center;
@@ -1661,8 +1661,17 @@ dialog {
   letter-spacing: 0.02em;
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 20px rgba(245, 158, 11, 0.25);
-  transition: all var(--transition-smooth);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
   cursor: pointer;
+}
+
+.to-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .to-top__icon {
@@ -2898,11 +2907,17 @@ dialog {
 .star-rating__star {
   background: transparent;
   border: none;
-  padding: 4px;
-  font-size: 22px;
+  padding: 4px 6px;
+  min-width: 40px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
   color: #574637;
   cursor: pointer;
   line-height: 1;
+  border-radius: var(--radius-sm);
   transition: color var(--transition), transform var(--transition);
 }
 
@@ -2912,7 +2927,7 @@ dialog {
 }
 
 .star-rating__star:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .star-rating__hint {
@@ -2941,8 +2956,8 @@ dialog {
 /* Всплывающее уведомление (Toast) */
 .shop-toast {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  top: 24px;
+  right: 24px;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -2957,7 +2972,7 @@ dialog {
   font-weight: 600;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(-16px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -2968,9 +2983,10 @@ dialog {
 
 @media (max-width: 640px) {
   .shop-toast {
-    bottom: 20px;
+    top: 16px;
     right: 16px;
     left: 16px;
+    bottom: auto;
     justify-content: center;
     text-align: center;
   }
