@@ -58,12 +58,18 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </a>
-        <a class="header-action-icon" href="contacts.html" aria-label="Контакты и шоурум" title="Контакты и шоурум">
+        <button class="header-action-icon header-action-icon--wishlist" type="button" aria-label="Избранное" title="Избранные игры" id="header-wishlist-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="header-wishlist-badge" id="wishlist-badge" style="display: none;">0</span>
+        </button>
+        <button class="header-action-icon header-action-icon--profile" type="button" aria-label="Личный кабинет" title="Личный кабинет" id="header-profile-btn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-        </a>
+        </button>
         <a class="header-action-icon header-action-icon--cart" href="order.html" aria-label="Корзина: 0 товаров" title="Корзина">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
@@ -97,6 +103,12 @@
         <p class="product__category">Категория: семейные стратегии · Артикул: HK-0101 · Издатель: Мир Хобби</p>
         <h1 class="product__title">Каркассон</h1>
 
+        <ul class="product-card__features" aria-label="Параметры настольной игры">
+          <li><svg class="product-card__feature-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 2–5 игроков</li>
+          <li><svg class="product-card__feature-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="4" ry="4"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg> от 7 лет</li>
+          <li><svg class="product-card__feature-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> 35–45 мин</li>
+        </ul>
+
         <p class="product__rating">
           <span role="img" aria-label="Оценка 5 из 5">★★★★★</span>
           4.9 · 48 проверенных отзывов покупателей
@@ -127,9 +139,21 @@
         </fieldset>
 
         <div class="product__buy">
-          <label for="quantity">Количество</label>
-          <input class="product__quantity" id="quantity" name="quantity" type="number" min="1" max="14" value="1">
+          <div class="product__quantity-wrapper">
+            <label class="product__quantity-label" for="quantity">Количество</label>
+            <div class="stepper" role="group" aria-label="Выбор количества товара">
+              <button type="button" class="stepper__btn stepper__btn--decrease" aria-label="Уменьшить количество" onclick="const q = document.getElementById('quantity'); if (parseInt(q.value) > parseInt(q.min || 1)) { q.value = parseInt(q.value) - 1; }">−</button>
+              <input class="stepper__input" id="quantity" name="quantity" type="number" min="1" max="14" value="1" readonly>
+              <button type="button" class="stepper__btn stepper__btn--increase" aria-label="Увеличить количество" onclick="const q = document.getElementById('quantity'); if (parseInt(q.value) < parseInt(q.max || 14)) { q.value = parseInt(q.value) + 1; }">+</button>
+            </div>
+          </div>
           <a class="button button--primary" href="order.html">Оформить заявку</a>
+          <button class="button button--secondary" type="button" data-id="carcassonne" id="product-page-fav-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span id="product-page-fav-text">В избранное</span>
+          </button>
           <a class="button button--secondary" href="catalog.html">← В каталог</a>
         </div>
 
@@ -246,6 +270,38 @@
           <span class="review-card__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</span>
         </article>
       </div>
+
+      <!-- Форма добавления отзыва с интерактивными звёздочками -->
+      <div class="review-form-card" id="add-review-section">
+        <h3 class="review-form-card__title">Оставить свой отзыв об игре</h3>
+        <p style="margin: 0 0 14px; font-size: 14px; color: var(--color-muted);">Поделитесь впечатлениями о качестве компонентов и игровом процессе «Каркассон»</p>
+        <form class="review-form" id="new-review-form">
+          <div style="margin-bottom: 14px;">
+            <label class="order-form__label" style="display: block; margin-bottom: 6px;">Ваша оценка:</label>
+            <div class="star-rating" id="star-rating" role="radiogroup" aria-label="Рейтинг игры">
+              <button type="button" class="star-rating__star star-rating__star--active" data-value="1" aria-label="1 звезда" aria-checked="false">★</button>
+              <button type="button" class="star-rating__star star-rating__star--active" data-value="2" aria-label="2 звезды" aria-checked="false">★</button>
+              <button type="button" class="star-rating__star star-rating__star--active" data-value="3" aria-label="3 звезды" aria-checked="false">★</button>
+              <button type="button" class="star-rating__star star-rating__star--active" data-value="4" aria-label="4 звезды" aria-checked="false">★</button>
+              <button type="button" class="star-rating__star star-rating__star--active" data-value="5" aria-label="5 звёзд" aria-checked="true">★</button>
+              <span class="star-rating__hint" id="star-rating-hint">5 из 5 (Отлично)</span>
+            </div>
+            <input type="hidden" name="rating" id="selected-rating" value="5">
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label class="order-form__label" for="review-author" style="display: block; margin-bottom: 6px;">Ваше имя и город</label>
+            <input class="order-form__input" type="text" id="review-author" name="author" placeholder="Например: Денис, г. Москва" required style="width: 100%; max-width: 400px; padding: 10px 14px; background: #201710; color: #ffffff; border: 1.5px solid rgba(229, 169, 60, 0.35); border-radius: var(--radius-sm);">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label class="order-form__label" for="review-text" style="display: block; margin-bottom: 6px;">Текст отзыва</label>
+            <textarea class="order-form__textarea" id="review-text" name="text" rows="3" placeholder="Расскажите о впечатлениях, качестве фишек и карточек, играх с друзьями..." required style="width: 100%; padding: 10px 14px; background: #201710; color: #ffffff; border: 1.5px solid rgba(229, 169, 60, 0.35); border-radius: var(--radius-sm);"></textarea>
+          </div>
+
+          <button class="button button--primary" type="submit" style="padding: 10px 24px; font-weight: 700;">Опубликовать отзыв</button>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -340,6 +396,83 @@
     </div>
   </footer>
 
-  <a class="to-top" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Наверх</a>
+  <a class="to-top" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Вернуться наверх страницы" title="Наверх">
+    <svg class="to-top__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 3.2a1.2 1.2 0 0 1 .85.35l7.6 7.6a1.2 1.2 0 0 1-.85 2.05H15v7.6a1.2 1.2 0 0 1-1.2 1.2h-3.6a1.2 1.2 0 0 1-1.2-1.2V13.2H4.4a1.2 1.2 0 0 1-.85-2.05l7.6-7.6a1.2 1.2 0 0 1 .85-.35z"/>
+    </svg>
+    <span class="to-top__text">Наверх</span>
+  </a>
+
+  <!-- Модальное окно: Личный кабинет покупателя -->
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-user-name">
+    <div class="profile-dialog__header">
+      <div class="profile-dialog__user-wrap">
+        <div class="profile-dialog__avatar" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div>
+          <h3 class="profile-dialog__name" id="profile-user-name">Александр Волков</h3>
+          <span class="profile-dialog__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Магистр настолок
+          </span>
+        </div>
+      </div>
+      <button class="profile-dialog__close" type="button" aria-label="Закрыть профиль" onclick="document.getElementById('profile-dialog').close()">×</button>
+    </div>
+
+    <div class="profile-dialog__stat-box">
+      <div class="profile-stat-item">
+        <span class="profile-stat-item__value">500 ₽</span>
+        <span class="profile-stat-item__label">Бонусный счёт</span>
+      </div>
+      <div class="profile-stat-item">
+        <span class="profile-stat-item__value">7%</span>
+        <span class="profile-stat-item__label">Клубная скидка</span>
+      </div>
+      <div class="profile-stat-item">
+        <span class="profile-stat-item__value" id="profile-wishlist-count">0</span>
+        <span class="profile-stat-item__label">В вишлисте</span>
+      </div>
+    </div>
+
+    <h4 class="profile-dialog__section-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+      Последний заказ
+    </h4>
+    <div class="profile-order-card">
+      <div class="profile-order-card__header">
+        <span class="profile-order-card__id">Заказ №ХК-8492</span>
+        <span class="profile-order-card__status">Доставлен</span>
+      </div>
+      <p class="profile-order-card__details">«Покорение Марса», «Кодовые имена» • 5 480 ₽ (оплачен картой онлайн)</p>
+    </div>
+
+    <h4 class="profile-dialog__section-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      Основной адрес доставки
+    </h4>
+    <p style="margin: 0 0 16px; font-size: 14px; color: var(--color-muted);">г. Москва, ул. Арбат, д. 24, кв. 12 (домофон 12В)</p>
+
+    <div class="profile-dialog__footer">
+      <a class="button button--secondary" href="catalog.html?filter=wishlist" style="flex: 1; text-align: center; text-decoration: none;">Мой вишлист</a>
+      <button class="button button--primary" type="button" style="flex: 1;" onclick="document.getElementById('profile-dialog').close()">Готово</button>
+    </div>
+  </dialog>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/product.js" defer></script>
 </body>
 </html>

@@ -369,17 +369,23 @@ main {
 .product__buy {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   align-items: stretch;
+}
+
+.product__quantity-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
 }
 
 .product__buy .button {
   min-height: 44px;
 }
 
-.product__quantity {
-  min-height: 44px;
-  width: 100%;
+.stepper {
+  width: fit-content;
 }
 
 .product-info-list {
@@ -391,11 +397,12 @@ main {
 @media (min-width: 640px) {
   .product__buy {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
+    gap: 16px;
   }
 
-  .product__quantity {
-    width: 90px;
+  .product__quantity-wrapper {
+    width: auto;
   }
 
   .product-info-list {
@@ -446,8 +453,9 @@ main {
 }
 
 .order-form__label {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
+  color: #f5ede2;
 }
 
 .order-form__input,
@@ -455,11 +463,18 @@ main {
 .order-form__select {
   width: 100%;
   min-height: 44px;
-  padding: 10px 14px;
+  padding: 11px 14px;
   font: inherit;
-  border: 1.5px solid var(--color-border);
+  border: 1.5px solid rgba(229, 169, 60, 0.35);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
+  background-color: #201710;
+  color: #ffffff;
+}
+
+.order-form__input::placeholder,
+.order-form__textarea::placeholder {
+  color: #a39482;
+  opacity: 1;
 }
 
 .order-form__textarea {
@@ -509,6 +524,15 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .order-form--page {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0 !important;
+  }
+
   .order-form__group--wide,
   .order-form__field--wide,
   .order-form__field--checkbox,
@@ -529,17 +553,20 @@ main {
 
 /* Модальное окно */
 .order-dialog {
-  width: min(100% - 32px, 560px);
+  width: min(100% - 32px, 580px);
   max-height: calc(100vh - 32px);
   overflow-y: auto;
-  padding: clamp(16px, 4vw, 32px);
-  border: 1px solid var(--color-border);
+  padding: clamp(20px, 4vw, 36px);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
   border-radius: var(--radius-lg);
+  background-color: #17110a;
+  color: #fdfbf7;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.15);
 }
 
 .order-dialog::backdrop {
-  background: rgba(28, 25, 23, 0.65);
-  backdrop-filter: blur(4px);
+  background: rgba(10, 7, 5, 0.82);
+  backdrop-filter: blur(6px);
 }
 
 /* ==========================================================================
@@ -551,9 +578,9 @@ main {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-block: var(--space-md);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(229, 169, 60, 0.25);
   border-radius: var(--radius-md);
-  background-color: var(--color-surface);
+  background-color: #16100a;
 }
 
 .product-table {
@@ -566,7 +593,7 @@ main {
 .product-table td,
 .product-table__cell {
   padding: 12px 16px;
-  border: 1px solid var(--color-border-light);
+  border: 1px solid rgba(229, 169, 60, 0.15);
   text-align: left;
 }
 
@@ -578,23 +605,94 @@ main {
 .back-to-top {
   position: fixed;
   right: 16px;
-  bottom: 16px;
-  z-index: 90;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 10px 18px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 95;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
-  box-shadow: 0 4px 16px var(--color-primary-glow);
+  gap: 8px;
+  min-width: 46px;
+  min-height: 46px;
+  padding: 10px 18px;
+  color: #fdfbf7;
+  background: rgba(23, 17, 11, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 20px rgba(245, 158, 11, 0.25);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.to-top--visible,
+.back-to-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.to-top__icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.5));
+  transition: transform var(--transition-smooth), color var(--transition), filter var(--transition);
+}
+
+.to-top:hover {
+  color: #120d06;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-color: #fbbf24;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 32px rgba(245, 158, 11, 0.7);
+}
+
+.to-top:hover .to-top__icon {
+  color: #120d06;
+  filter: none;
+  transform: translateY(-3px);
+}
+
+.to-top:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+@media (max-width: 560px) {
+  .to-top,
+  .back-to-top {
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
+    border-radius: 50%;
+  }
+
+  .to-top__text {
+    display: none;
+  }
+
+  .to-top__icon {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @media (min-width: 768px) {
   .to-top,
   .back-to-top {
-    right: 32px;
-    bottom: 32px;
+    right: 28px;
+    bottom: 28px;
+    padding: 12px 22px;
+    font-size: 14px;
   }
 }
 
@@ -684,5 +782,31 @@ main {
 @media (min-width: 1024px) {
   .site-footer__grid {
     grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  }
+}
+
+/* ==========================================================================
+   12. Адаптивность новых компонентов
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .profile-dialog__user-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .profile-dialog__avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .delivery-calc__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-calc__addon-label {
+    flex-wrap: wrap;
+    gap: 6px;
   }
 }

@@ -58,12 +58,18 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </a>
-        <a class="header-action-icon" href="contacts.html" aria-label="Контакты и шоурум" title="Контакты и шоурум">
+        <button class="header-action-icon header-action-icon--wishlist" type="button" aria-label="Избранное" title="Избранные игры" id="header-wishlist-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="header-wishlist-badge" id="wishlist-badge" style="display: none;">0</span>
+        </button>
+        <button class="header-action-icon header-action-icon--profile" type="button" aria-label="Личный кабинет" title="Личный кабинет" id="header-profile-btn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-        </a>
+        </button>
         <a class="header-action-icon header-action-icon--cart" href="order.html" aria-label="Корзина: 0 товаров" title="Корзина">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
@@ -89,57 +95,173 @@
       </p>
 
       <div class="order-checkout-layout">
-        <!-- Форма заказа -->
+        <div id="order-page-success" class="newsletter-card" hidden style="grid-column: 1 / -1; margin-bottom: 24px; border-color: var(--color-success); background-color: #1a2215;">
+          <div>
+            <h3 style="color: #6ee7b7; margin-top: 0; font-size: 20px;">🎉 Заказ успешно принят! Номер заявки: #ХК-9214</h3>
+            <p style="margin: 0; color: #d1fae5; font-size: 15px;">Мы отправили чек и детали на указанный e-mail. Менеджер позвонит вам в течение 10 минут.</p>
+          </div>
+          <a class="button button--primary" href="catalog.html" style="justify-self: start;">В каталог</a>
+        </div>
+
+        <!-- Форма заказа: пошаговое оформление (Steps 1-4) -->
         <form class="order-form order-form--page" action="#" method="post">
-          <div class="order-form__field">
-            <label class="order-form__label" for="order-name">Имя покупателя</label>
-            <input class="order-form__input" id="order-name" name="name" type="text"
-              placeholder="Введите ваше имя" minlength="2"
-              autocomplete="given-name" required>
-          </div>
+          <!-- Шаг 1: Контактные данные покупателя -->
+          <section class="checkout-step" aria-labelledby="step-contacts-title">
+            <div class="checkout-step__header">
+              <span class="checkout-step__number">1</span>
+              <h2 class="checkout-step__title" id="step-contacts-title">Контактные данные покупателя</h2>
+            </div>
+            <div class="order-fields-grid">
+              <div class="order-form__field">
+                <label class="order-form__label" for="order-name">Имя покупателя</label>
+                <input class="order-form__input" id="order-name" name="name" type="text"
+                  placeholder="Например, Михаил" minlength="2"
+                  autocomplete="given-name" required>
+              </div>
 
-          <div class="order-form__field">
-            <label class="order-form__label" for="order-email">Электронная почта (e-mail)</label>
-            <input class="order-form__input" id="order-email" name="email" type="email"
-              placeholder="example@mail.ru" autocomplete="email" required>
-            <small class="order-form__hint">На этот адрес отправим электронный чек и трек-номер посылки</small>
-          </div>
+              <div class="order-form__field">
+                <label class="order-form__label" for="order-phone">Номер телефона</label>
+                <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
+                  placeholder="+7 (900) 000-00-00"
+                  pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+                <small class="order-form__hint">Формат: +7 (900) 000-00-00 (курьер звонит за 1 час)</small>
+              </div>
 
-          <div class="order-form__field">
-            <label class="order-form__label" for="order-phone">Номер телефона</label>
-            <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
-              placeholder="+7 (900) 000-00-00"
-              pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-            <small class="order-form__hint">Формат: +7 (900) 000-00-00 (курьер звонит за 1 час)</small>
-          </div>
+              <div class="order-form__field order-form__field--full">
+                <label class="order-form__label" for="order-email">Электронная почта (e-mail)</label>
+                <input class="order-form__input" id="order-email" name="email" type="email"
+                  placeholder="example@mail.ru" autocomplete="email" required>
+                <small class="order-form__hint">На этот адрес отправим электронный кассовый чек и трек-номер посылки</small>
+              </div>
+            </div>
+          </section>
 
-          <div class="order-form__field">
-            <label class="order-form__label" for="order-topic">Тема заявки / Способ получения</label>
-            <select class="order-form__select" id="order-topic" name="topic" required>
-              <option value="">Выберите тему или способ получения</option>
-              <option value="product" selected>Покупка настольной игры с курьерской доставкой</option>
-              <option value="delivery">Самовывоз из шоурума (Москва, Дизайн-завод)</option>
-              <option value="consultation">Консультация гейм-мастера по подбору игр</option>
-            </select>
-          </div>
+          <!-- Шаг 2: Способ получения заказа -->
+          <section class="checkout-step" aria-labelledby="step-delivery-title">
+            <div class="checkout-step__header">
+              <span class="checkout-step__number">2</span>
+              <h2 class="checkout-step__title" id="step-delivery-title">Способ получения заказа</h2>
+            </div>
 
-          <div class="order-form__field order-form__field--wide">
-            <label class="order-form__label" for="order-comment">Адрес доставки и пожелания к заказу</label>
-            <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
-              placeholder="Укажите город, улицу, дом, квартиру/офис, удобный интервал времени или промокод"></textarea>
-          </div>
+            <!-- Карточки вариантов получения -->
+            <div class="delivery-calc__grid" role="radiogroup" aria-label="Выбор способа получения">
+              <label class="delivery-calc__option delivery-calc__option--active">
+                <input type="radio" name="delivery-method" value="pickup" data-price="0" data-name="Самовывоз" checked>
+                <div>
+                  <div class="delivery-calc__option-name">🏢 Самовывоз</div>
+                  <div class="delivery-calc__option-desc">Шоурум Дизайн-завод, сегодня</div>
+                </div>
+                <div class="delivery-calc__option-price">0 ₽</div>
+              </label>
 
-          <div class="order-form__field order-form__field--checkbox">
-            <label>
-              <input class="order-form__input order-form__input--checkbox"
-                id="order-agreement" name="agreement" type="checkbox" required>
-              Я согласен на обработку персональных данных и подтверждаю ознакомление с правилами продажи
-            </label>
-          </div>
+              <label class="delivery-calc__option">
+                <input type="radio" name="delivery-method" value="courier" data-price="350" data-name="Курьер">
+                <div>
+                  <div class="delivery-calc__option-name">🚚 Курьер по Москве</div>
+                  <div class="delivery-calc__option-desc">До двери за 1–2 дня</div>
+                </div>
+                <div class="delivery-calc__option-price">350 ₽</div>
+              </label>
 
-          <div class="order-form__actions">
-            <button class="button button--primary" type="submit">Подтвердить заказ</button>
-          </div>
+              <label class="delivery-calc__option">
+                <input type="radio" name="delivery-method" value="express" data-price="650" data-name="Экспресс">
+                <div>
+                  <div class="delivery-calc__option-name">⚡ Экспресс-доставка</div>
+                  <div class="delivery-calc__option-desc">День-в-день за 3–4 часа</div>
+                </div>
+                <div class="delivery-calc__option-price">650 ₽</div>
+              </label>
+            </div>
+
+            <!-- Информационный блок самовывоза (показывается, когда выбран самовывоз) -->
+            <div class="checkout-pickup-info" id="checkout-pickup-info">
+              <div class="checkout-pickup-info__icon" aria-hidden="true">📍</div>
+              <div>
+                <span class="checkout-pickup-info__badge">Бесплатно • Готовность через 15 минут</span>
+                <p class="checkout-pickup-info__text">
+                  <strong>Шоурум «Ход конём»:</strong> г. Москва, ул. Большая Новодмитровская, д. 36, стр. 2 (Дизайн-завод, вход со стороны центральной площади).
+                </p>
+                <p class="checkout-pickup-info__subtext">
+                  🕒 Ежедневно с 10:00 до 22:00. В шоуруме можно распаковать и осмотреть игру перед оплатой.
+                </p>
+              </div>
+            </div>
+
+            <!-- Блок ввода адреса доставки (показывается только при курьере или экспрессе) -->
+            <div class="checkout-address-box" id="checkout-address-box" style="display: none;">
+              <div class="order-form__field">
+                <label class="order-form__label" for="order-address">Адрес доставки <span class="order-form__required-mark">*</span></label>
+                <input class="order-form__input" id="order-address" name="address" type="text"
+                  placeholder="Город, улица, номер дома, подъезд, этаж, квартира/офис" autocomplete="street-address">
+                <small class="order-form__hint">Курьер свяжется с вами за 1 час до прибытия</small>
+              </div>
+              <div class="order-form__field">
+                <label class="order-form__label" for="order-comment">Комментарий для курьера (домофон, шлагбаум, время)</label>
+                <textarea class="order-form__textarea order-form__textarea--short" id="order-comment" name="comment" rows="2"
+                  placeholder="Например: код домофона #1423, шлагбаум открывается звонком, удобнее после 18:00"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- Шаг 3: Дополнительные опции к заказу -->
+          <section class="checkout-step" aria-labelledby="step-addons-title">
+            <div class="checkout-step__header">
+              <span class="checkout-step__number">3</span>
+              <h2 class="checkout-step__title" id="step-addons-title">Дополнительные опции к заказу</h2>
+            </div>
+
+            <div class="delivery-calc__addons">
+              <label class="delivery-calc__addon-label">
+                <span class="delivery-calc__addon-text">
+                  <input type="checkbox" name="delivery-addon" value="sleeves" data-price="290" data-name="Премиум протекторы">
+                  🛡️ Премиум протекторы для карт (100 шт., плотные 100 мкм)
+                </span>
+                <span class="delivery-calc__addon-price">+290 ₽</span>
+              </label>
+
+              <label class="delivery-calc__addon-label">
+                <span class="delivery-calc__addon-text">
+                  <input type="checkbox" name="delivery-addon" value="gift-wrap" data-price="350" data-name="Подарочная упаковка">
+                  🎁 Крафтовая подарочная упаковка с сургучной печатью
+                </span>
+                <span class="delivery-calc__addon-price">+350 ₽</span>
+              </label>
+
+              <label class="delivery-calc__addon-label">
+                <span class="delivery-calc__addon-text">
+                  <input type="checkbox" name="delivery-addon" value="express-pack" data-price="190" data-name="Экспресс-комплектация">
+                  ⚡ Приоритетная комплектация заказа вне очереди
+                </span>
+                <span class="delivery-calc__addon-price">+190 ₽</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Шаг 4: Подтверждение заказа -->
+          <section class="checkout-step" aria-labelledby="step-submit-title">
+            <div class="checkout-step__header">
+              <span class="checkout-step__number">4</span>
+              <h2 class="checkout-step__title" id="step-submit-title">Подтверждение и оформление</h2>
+            </div>
+
+            <div class="order-form__field order-form__field--checkbox">
+              <label>
+                <input class="order-form__input order-form__input--checkbox"
+                  id="order-agreement" name="agreement" type="checkbox" required>
+                Я согласен на обработку персональных данных и подтверждаю ознакомление с условиями оферты
+              </label>
+            </div>
+
+            <div class="checkout-submit-wrap">
+              <button class="button button--primary order-submit-btn" type="submit">
+                <span>Подтвердить заказ • </span>
+                <span id="btn-total-val">1 291 руб.</span>
+              </button>
+              <p class="order-guarantee-note">
+                🔒 Оплата при получении картой или наличными после осмотра игры • Бесплатная отмена в 1 клик
+              </p>
+            </div>
+          </section>
         </form>
 
         <!-- Сводка заказа интернет-магазина -->
@@ -167,13 +289,18 @@
           </div>
 
           <div class="order-summary-row">
-            <span>Доставка по Москве</span>
-            <span style="color: var(--color-success);">Бесплатно</span>
+            <span>Доставка</span>
+            <span id="summary-delivery-val" style="color: var(--color-primary); font-weight: 700;">0 руб. (Бесплатно)</span>
+          </div>
+
+          <div class="order-summary-row" id="summary-addons-row" style="display: none;">
+            <span>Доп. услуги</span>
+            <span id="summary-addons-val" style="color: var(--color-primary); font-weight: 700;">+0 руб.</span>
           </div>
 
           <div class="order-summary-row order-summary-row--total">
             <span>Итого к оплате:</span>
-            <span>1 791 руб.</span>
+            <span id="summary-total-val">1 291 руб.</span>
           </div>
 
           <div style="margin-top: 20px; font-size: 13px; color: var(--color-muted); line-height: 1.6;">
@@ -277,6 +404,83 @@
     </div>
   </footer>
 
-  <a class="to-top" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Наверх</a>
+  <a class="to-top" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Вернуться наверх страницы" title="Наверх">
+    <svg class="to-top__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 3.2a1.2 1.2 0 0 1 .85.35l7.6 7.6a1.2 1.2 0 0 1-.85 2.05H15v7.6a1.2 1.2 0 0 1-1.2 1.2h-3.6a1.2 1.2 0 0 1-1.2-1.2V13.2H4.4a1.2 1.2 0 0 1-.85-2.05l7.6-7.6a1.2 1.2 0 0 1 .85-.35z"/>
+    </svg>
+    <span class="to-top__text">Наверх</span>
+  </a>
+
+  <!-- Модальное окно: Личный кабинет покупателя -->
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-user-name">
+    <div class="profile-dialog__header">
+      <div class="profile-dialog__user-wrap">
+        <div class="profile-dialog__avatar" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div>
+          <h3 class="profile-dialog__name" id="profile-user-name">Александр Волков</h3>
+          <span class="profile-dialog__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Магистр настолок
+          </span>
+        </div>
+      </div>
+      <button class="profile-dialog__close" type="button" aria-label="Закрыть профиль" onclick="document.getElementById('profile-dialog').close()">×</button>
+    </div>
+
+    <div class="profile-dialog__stat-box">
+      <div class="profile-stat-item">
+        <span class="profile-stat-item__value">500 ₽</span>
+        <span class="profile-stat-item__label">Бонусный счёт</span>
+      </div>
+      <div class="profile-stat-item">
+        <span class="profile-stat-item__value">7%</span>
+        <span class="profile-stat-item__label">Клубная скидка</span>
+      </div>
+      <div class="profile-stat-item">
+        <span class="profile-stat-item__value" id="profile-wishlist-count">0</span>
+        <span class="profile-stat-item__label">В вишлисте</span>
+      </div>
+    </div>
+
+    <h4 class="profile-dialog__section-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+      Последний заказ
+    </h4>
+    <div class="profile-order-card">
+      <div class="profile-order-card__header">
+        <span class="profile-order-card__id">Заказ №ХК-8492</span>
+        <span class="profile-order-card__status">Доставлен</span>
+      </div>
+      <p class="profile-order-card__details">«Покорение Марса», «Кодовые имена» • 5 480 ₽ (оплачен картой онлайн)</p>
+    </div>
+
+    <h4 class="profile-dialog__section-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      Основной адрес доставки
+    </h4>
+    <p style="margin: 0 0 16px; font-size: 14px; color: var(--color-muted);">г. Москва, ул. Арбат, д. 24, кв. 12 (домофон 12В)</p>
+
+    <div class="profile-dialog__footer">
+      <a class="button button--secondary" href="catalog.html?filter=wishlist" style="flex: 1; text-align: center; text-decoration: none;">Мой вишлист</a>
+      <button class="button button--primary" type="button" style="flex: 1;" onclick="document.getElementById('profile-dialog').close()">Готово</button>
+    </div>
+  </dialog>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/order.js" defer></script>
 </body>
 </html>
