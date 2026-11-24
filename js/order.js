@@ -4,9 +4,6 @@
 
   const BASE_PRICE = 1291; // Базовая стоимость «Каркассон» со всеми скидками (1990 - 500 - 199)
 
-  const calcSection = document.getElementById('delivery-calc');
-  if (!calcSection) return;
-
   const deliveryRadios = document.querySelectorAll('input[name="delivery-method"]');
   const addonCheckboxes = document.querySelectorAll('input[name="delivery-addon"]');
   const calcTotalVal = document.getElementById('calc-total-val');
@@ -14,6 +11,10 @@
   const summaryAddonsRow = document.getElementById('summary-addons-row');
   const summaryAddonsVal = document.getElementById('summary-addons-val');
   const summaryTotalVal = document.getElementById('summary-total-val');
+  const btnTotalVal = document.getElementById('btn-total-val');
+  const pickupInfoBox = document.getElementById('checkout-pickup-info');
+  const addressBox = document.getElementById('checkout-address-box');
+  const addressInput = document.getElementById('order-address');
 
   function formatPrice(val) {
     return new Intl.NumberFormat('ru-RU').format(val) + ' руб.';
@@ -21,7 +22,7 @@
 
   function recalculate() {
     let deliveryCost = 0;
-    let deliveryName = 'Самовывоз (Бесплатно)';
+    let selectedMethod = 'pickup';
 
     deliveryRadios.forEach((radio) => {
       const cardOption = radio.closest('.delivery-calc__option');
@@ -30,17 +31,25 @@
       }
       if (radio.checked) {
         deliveryCost = Number(radio.dataset.price || 0);
-        deliveryName = radio.dataset.name || 'Доставка';
+        selectedMethod = radio.value;
       }
     });
 
+    // Переключение способа получения (самовывоз vs доставка)
+    if (selectedMethod === 'pickup') {
+      if (pickupInfoBox) pickupInfoBox.style.display = 'flex';
+      if (addressBox) addressBox.style.display = 'none';
+      if (addressInput) addressInput.required = false;
+    } else {
+      if (pickupInfoBox) pickupInfoBox.style.display = 'none';
+      if (addressBox) addressBox.style.display = 'flex';
+      if (addressInput) addressInput.required = true;
+    }
+
     let addonsCost = 0;
-    const activeAddons = [];
     addonCheckboxes.forEach((chk) => {
       if (chk.checked) {
-        const cost = Number(chk.dataset.price || 0);
-        addonsCost += cost;
-        activeAddons.push(chk.dataset.name || 'Услуга');
+        addonsCost += Number(chk.dataset.price || 0);
       }
     });
 
@@ -65,6 +74,10 @@
 
     if (summaryTotalVal) {
       summaryTotalVal.textContent = formatPrice(grandTotal);
+    }
+
+    if (btnTotalVal) {
+      btnTotalVal.textContent = formatPrice(grandTotal);
     }
   }
 
