@@ -89,6 +89,8 @@
       toast = document.createElement('div');
       toast.id = 'shop-toast';
       toast.className = 'shop-toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
       document.body.appendChild(toast);
     }
     toast.textContent = message;
@@ -212,6 +214,19 @@
       });
     }
 
+    if (orderDialog) {
+      orderDialog.addEventListener('click', (e) => {
+        const rect = orderDialog.getBoundingClientRect();
+        const isInDialog = (
+          rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+          orderDialog.close();
+        }
+      });
+    }
+
     if (orderForm && orderDialog) {
       orderForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -267,13 +282,54 @@
     updateToTop();
   }
 
-  // --- 7. Инициализация при загрузке страницы ---
+  // --- 7. Маска телефона +7 (XXX) XXX-XX-XX и подписка на рассылку ---
+  function formatPhoneValue(raw) {
+    let digits = raw.replace(/\D/g, '');
+    if (!digits) return '';
+    if (digits[0] === '8' || digits[0] === '7') {
+      digits = digits.slice(1);
+    }
+    digits = digits.slice(0, 10);
+    let formatted = '+7';
+    if (digits.length > 0) formatted += ' (' + digits.slice(0, 3);
+    if (digits.length >= 3) formatted += ')';
+    if (digits.length > 3) formatted += ' ' + digits.slice(3, 6);
+    if (digits.length > 6) formatted += '-' + digits.slice(6, 8);
+    if (digits.length > 8) formatted += '-' + digits.slice(8, 10);
+    return formatted;
+  }
+
+  function initPhoneMasks() {
+    document.querySelectorAll('input[type="tel"]').forEach((input) => {
+      input.addEventListener('input', () => {
+        input.value = formatPhoneValue(input.value);
+      });
+    });
+  }
+
+  function initNewsletterForm() {
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (!newsletterForm) return;
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!newsletterForm.checkValidity()) {
+        newsletterForm.reportValidity();
+        return;
+      }
+      showToast('Спасибо за подписку! Промокод KNIGHT2026 активирован.');
+      newsletterForm.reset();
+    });
+  }
+
+  // --- 8. Инициализация при загрузке страницы ---
   function init() {
     updateWishlistUI();
     initProfileDialog();
     initWishlistListeners();
     initOrderDialog();
     initToTopButton();
+    initPhoneMasks();
+    initNewsletterForm();
   }
 
   if (document.readyState === 'loading') {

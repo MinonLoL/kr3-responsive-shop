@@ -118,7 +118,7 @@ main {
   width: auto;
   padding: 7px 14px;
   border-radius: var(--radius-full);
-  min-height: 40px;
+  min-height: 44px;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -330,6 +330,16 @@ main {
   .catalog-filters__actions .button {
     width: auto;
     flex: 1;
+  }
+}
+
+@media (max-width: 1023px) {
+  .catalog-filters__title {
+    display: none;
+  }
+
+  .catalog-filters__form.is-collapsed {
+    display: none;
   }
 }
 

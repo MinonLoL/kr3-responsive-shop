@@ -11,7 +11,12 @@
   const cards = Array.from(grid.querySelectorAll('.product-card'));
   const countOutput = document.getElementById('catalog-count');
   const emptyMessage = document.getElementById('catalog-empty');
+  const emptyResetBtn = document.getElementById('catalog-empty-reset');
   const sortSelect = document.getElementById('catalog-sort');
+  const searchInput = document.getElementById('catalog-search');
+  const filtersToggleBtn = document.getElementById('catalog-filters-toggle');
+  const activeFiltersWrap = document.getElementById('catalog-active-filters');
+  const wishlistChip = document.getElementById('catalog-wishlist-chip');
 
   // Ползунок цены
   const priceSlider = document.getElementById('price-range');
@@ -39,7 +44,7 @@
       .map((input) => input.value);
   }
 
-  function matchesFilters(card, categories, priceFrom, priceTo, onlyInStock) {
+  function matchesFilters(card, categories, priceFrom, priceTo, onlyInStock, query) {
     const price = Number(card.dataset.price);
     const cardCategories = (card.dataset.category || '').split(' ');
     const cardId = card.dataset.product || card.querySelector('.product-card__favorite')?.dataset.id || '';
@@ -48,6 +53,15 @@
     if (filterOnlyWishlist) {
       const wishlist = typeof window.hkGetWishlist === 'function' ? window.hkGetWishlist() : [];
       if (!wishlist.includes(cardId)) {
+        return false;
+      }
+    }
+
+    // Поисковый запрос
+    if (query) {
+      const titleText = (card.querySelector('.product-card__title')?.textContent || '').toLowerCase();
+      const descText = (card.querySelector('.product-card__description')?.textContent || '').toLowerCase();
+      if (!titleText.includes(query) && !descText.includes(query)) {
         return false;
       }
     }
@@ -81,15 +95,21 @@
     const priceFrom = parseFloat(priceFromInput?.value);
     const priceTo = parseFloat(priceToInput?.value);
     const onlyInStock = filtersForm.elements['in-stock']?.checked;
+    const query = (searchInput?.value || '').trim().toLowerCase();
 
     let visibleCount = 0;
 
     getSortedCards().forEach((card) => {
       grid.appendChild(card);
-      const visible = matchesFilters(card, categories, priceFrom, priceTo, onlyInStock);
+      const visible = matchesFilters(card, categories, priceFrom, priceTo, onlyInStock, query);
       card.hidden = !visible;
       if (visible) visibleCount += 1;
     });
+
+    if (activeFiltersWrap && wishlistChip) {
+      wishlistChip.hidden = !filterOnlyWishlist;
+      activeFiltersWrap.hidden = !filterOnlyWishlist;
+    }
 
     if (countOutput) {
       if (filterOnlyWishlist) {
@@ -147,10 +167,45 @@
     }
   };
 
-  // Проверяем URL параметр ?filter=wishlist
+  // Проверяем URL параметры ?filter=wishlist, ?category=..., ?q=...
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('filter') === 'wishlist') {
     filterOnlyWishlist = true;
+  }
+  const initialCategory = urlParams.get('category');
+  if (initialCategory) {
+    const catCheckbox = filtersForm.querySelector(`input[name="category"][value="${initialCategory}"]`);
+    if (catCheckbox) catCheckbox.checked = true;
+  }
+  const initialQuery = urlParams.get('q');
+  if (initialQuery && searchInput) {
+    searchInput.value = initialQuery;
+  }
+
+  // Мобильный аккордеон фильтров
+  if (filtersToggleBtn) {
+    filtersToggleBtn.addEventListener('click', () => {
+      const collapsed = filtersForm.classList.toggle('is-collapsed');
+      filtersToggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    });
+  }
+
+  if (wishlistChip) {
+    wishlistChip.addEventListener('click', () => {
+      filterOnlyWishlist = false;
+      applyCatalog();
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyCatalog);
+  }
+
+  if (emptyResetBtn && resetButton) {
+    emptyResetBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      resetButton.click();
+    });
   }
 
   filtersForm.addEventListener('submit', (event) => {
@@ -166,6 +221,7 @@
   if (resetButton) {
     resetButton.addEventListener('click', () => {
       filterOnlyWishlist = false;
+      if (searchInput) searchInput.value = '';
       setTimeout(() => {
         if (priceSlider) {
           priceSlider.value = priceSlider.max;
